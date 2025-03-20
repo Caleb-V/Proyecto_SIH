@@ -1,0 +1,86 @@
+/* Footer */
+.footer {
+    background: var(--text-color); /* Color corporativo */
+    color: var(--secondary-color) !important; /* Asegura que el texto sea visible */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+.footer ul {
+    /* Quitar los estilos de lista predeterminados (puntos o números) */
+    list-style: none;
+    /* Mostrar los elementos de la lista en una fila horizontal */
+    display: flex;
+    /* Centrar los elementos de la lista horizontalmente */
+    justify-content: center;
+    /* Espaciado entre elementos de la lista */
+    gap: 15px;
+    /* Quitar el espaciado interno de la lista */
+    padding: 0;
+}
+
+.footer ul li a {
+    /* Color blanco para los enlaces */
+    color: white;
+    /* Quitar el subrayado predeterminado de los enlaces */
+    text-decoration: none;
+    /* Tamaño de fuente para los enlaces */
+    font-size: 1rem;
+    /* Transición suave para cambios de color al pasar el mouse */
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    /* Color dorado para los enlaces al pasar el mouse */
+    color: white;
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2.1rem;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+/* Corrección del hover para que use un color fijo */
+.social-links a:hover {
+    color:var(--secondary-color); /* Dorado para resaltar */
+    transform: scale(2.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .social-links {
+        gap: 5px;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+}

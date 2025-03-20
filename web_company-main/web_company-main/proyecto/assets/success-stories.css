@@ -1,0 +1,87 @@
+/* Nuestras empresas */
+.success-stories {
+    padding: 160px 0; /* Aumenta el espacio superior e inferior */
+    background: white;
+}
+.section-title {
+    font-size: clamp(24px, 3vw, 32px);
+    color: #003366!important;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-intro {
+    font-size: 1.2rem; /* Aumenta el tamaño de la descripción */
+    color: black;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:5px; /* Más separación entre los elementos */
+    max-width: 700px;
+    margin: auto;
+}
+.case-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.case-background {
+    width: 100%;
+    height: 500px; /* Aumenta la altura de las imágenes */
+    object-fit: cover;
+}
+.case-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.case-logo {
+    max-width: 300px; /* Hace el logo más grande */
+    margin-bottom: 10px;
+}
+.case-description {
+    font-size: 1.2rem; /* Aumenta el tamaño de la descripción */
+    color: white;
+    max-width: 85%;
+}
+@media (max-width: 458px) {
+    .cases-grid {
+        grid-template-columns: 1fr; /* Hace que cada elemento ocupe toda la fila */
+    }
+
+    .case-background {
+        height: auto;
+        max-width: auto; /* Permite que la altura se ajuste automáticamente */
+        background-size: cover; /* La imagen cubre todo el contenedor */
+        display: flex;
+        flex-direction: column; /* Asegura que el logo y el texto estén bien alineados */
+        align-items: center;
+        justify-content: center;
+        padding: 3px;
+        text-align: center; /* Centra el contenido */
+    }
+
+    .case-logo {
+        max-width: 50%; /* Hace que el logo sea responsive */
+        height: 80px;
+    }
+
+    .case-description {
+        font-size: clamp(0.8rem, 2vw, 1rem); /* Ajusta el tamaño del texto según el ancho de la pantalla */
+        max-width: 90%; /* Evita que el texto sea demasiado ancho */
+    }
+}

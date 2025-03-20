@@ -1,0 +1,99 @@
+/* Testimonios */
+.testimonials-carousel {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    color: #003366;
+    position: relative;
+}
+
+.testimonials-title {
+    font-size: clamp(24px, 3vw, 32px);
+    color: #003366;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonials-swiper {
+    width: 100%;
+    max-width: 1000px; /* Ajuste del ancho para una mejor distribución */
+    margin: auto;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los slides se apilen */
+    justify-content: center; /* Asegura alineación */
+    align-items: center;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Ajuste de altura */
+    width: 250px; /* Ajuste del ancho */
+    box-shadow: 0 4px 10px rgba(10, 28, 131, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+blockquote {
+    font-size: 1.2rem;
+    font-style: bold;
+    margin: 0 auto;
+    max-width: 90%;
+    line-height: 1.2;
+    color: black;
+    border-left: 5px solid #003366;
+    padding-left: 15px;
+    text-align: left;
+}
+
+
+/* Ajustes Responsivos */
+@media (max-width: 1200px) {
+    .testimonials-swiper {
+        max-width: 95%;
+    }
+    .swiper-slide {
+        height: 260px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-swiper {
+        max-width: 100%;
+    }
+    .swiper-slide {
+        height: 240px;
+        width: 85%; /* Se expande en móviles para mayor legibilidad */
+        margin: 10px auto;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        left: -10px;
+        right: -10px;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        height: 220px;
+        width: 90%;
+    }
+    blockquote {
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+}

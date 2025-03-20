@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Sociedad de inversiones y consultoría financiera en España. Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta name="keywords" content="inversiones, finanzas, asesoramiento financiero, planificación patrimonial, gestión de capital">
+    <meta property="og:title" content="Sociedad Inversiones Higoma SL - Sih">
+    <meta property="og:description" content="Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta property="og:image" content="images/favicon.png">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Sociedad Inversiones Higoma SL - SIH</title>
+    <link rel="stylesheet" href="cookies.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="success-stories.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="testimonials.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="location.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href= "images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<body>
+<!-- Botón de WhatsApp Flotante -->
+<a href="https://wa.me/679242125?text=Hola%20Sociedad%20Higoma%20SL%2C%20estoy%20interesado%20en%20sus%20servicios.%20¿Podrían%20brindarme%20más%20información%3F"
+target="_blank"
+class="whatsapp-floating"
+aria-label="Contáctanos por WhatsApp"
+onclick="trackWhatsappClick()">
+ <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+</div>
+<header class="header">
+    <div class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo-title">
+            <img src="images/logo-sih.png.png" alt="Logo Sociedad Higoma SL" class="logo">
+            <span class="company-title">Sociedad de Inversiones Higoma SL</span>
+        </a>
+
+        <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" aria-label="Abrir Menú">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de navegación -->
+        <nav class="navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="sobre.nosotros.html">Compañia <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sobre.nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="#testimonials-carousel">Testimonios</a></li>
+                        <li><a href="#success-stories">Nuestras empresas</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="servicios.html">Proyectos<i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li><a href="#team">Equipo</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                    <li class="language-switcher">
+                      <button id="language-button">🌐 Idioma</button>
+                      <div class="language-options">
+                        <a href="index.en.html"en">English</a>
+                        <a href="index.fr.html" data-lang="fr">Français</a>
+                      </div>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- parte principal con fondo -->
+<section class="hero">
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="tu-video.mp4.mp4" type="video/mp4">
+            <!-- Texto alternativo si el navegador no soporta video -->
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+    <div class="hero-overlay">
+        <div class="container">
+            <h1 class="hero-title">Aseguramos tu éxito patrimonial y financiero</h1>
+            <p class="hero-subtitle">Transformamos tu patrimonio en un legado duradero, brindándote estrategias personalizadas y asesoramiento con expertos para lograr tus metas financieras.</p>
+            <a href="#contact" class="btn btn-primary">Contáctanos</a>
+        </div>
+    </div>
+</section>
+<!-- Sección Sobre Nosotros -->
+<section id="about" class="about-page">
+    <div class="container">
+        <h1 class="about-title">SIH: Construcción, Inmobiliaria y Sostenibilidad</h1>
+        <p class="about-description">
+            En Sociedad de Inversiones Higoma SL (SIH), transformamos desafíos en oportunidades mediante estrategias inmobiliarias y patrimoniales sólidas. 
+            Nuestro compromiso es la excelencia, la confianza y la rentabilidad sostenible.
+        </p>
+        <a href="sobre.nosotros.html" class="btn">Saber más</a>
+    </div>
+</section>
+
+    <!--Servicios-->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">
+                Descubre nuestras áreas de especialización y cómo podemos ayudarte a lograr tus objetivos.
+            </p>
+    
+            <!-- Servicio 1: Gestión Inmobiliaria -->   
+            <div class="service-row">
+                <div class="service-image">
+                    <img src="images/inmobiliaria.png" alt="Gestión Inmobiliaria">
+                </div>
+                <div class="service-content">
+                    <h3>Gestión Inmobiliaria</h3>
+                    <p>
+                        Ofrecemos servicios completos de compra y venta de propiedades, gestión de alquileres y administración de propiedades.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Servicio 2: Gestión Patrimonial -->
+            <div class="service-row reverse">
+                <div class="service-image">
+                    <img src="images/Patrimonial.png" alt="Gestión Patrimonial">
+                </div>
+                <div class="service-content">
+                    <h3>Gestión Patrimonial</h3>
+                    <p>
+                        Estrategias personalizadas para la planificación financiera, asesoramiento en inversiones y protección de activos.
+                    </p>
+                </div>
+            </div>
+    
+           <!-- Servicio 3: Construcción -->
+        <div class="service-row">
+        <div class="service-video">
+        <video width="100%" autoplay loop muted playsinline>
+            <source src="images/Video-construcción.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        </div>
+        <div class="service-content">
+        <h3>Construcción</h3>
+        <p>
+            Diseño y construcción de proyectos Edificios residenciales y locales comerciales, así como servicios de renovación y remodelación.
+        </p>
+        </div>
+    </div>
+        <!-- Servicio 4: Consultoría Empresarial -->
+            <div class="service-row reverse">
+                <div class="service-image">
+                    <img src="images/Consultoria.png" alt="Consultoría Empresarial">
+                </div>
+                <div class="service-content">
+                    <h3>Consultoría Empresarial</h3>
+                    <p>
+                        Asesoramiento estratégico en negocios de inversiones, consultoría gastronómica y calidad, construcción, tecnología y soluciones para la sector alimentario.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Servicio 5: Gastronomía & Alimentación -->
+            <div class="service-row">
+                <div class="service-image">
+                    <img src="images/Cocina.png.png" alt="Gastronomía y Alimentación">
+                </div>
+                <div class="service-content">
+                    <h3>Gastronomía & Alimentación</h3>
+                <p>
+                    Ofrecemos servicios en dos áreas principales:
+                    </p>
+                <ul>
+                <li><strong>Restaurantes de Alto Nivel:</strong> Experiencias gastronómicas excepcionales en nuestros restaurantes de alta categoría.</li>
+                <li><strong>Producción de Comidas Preparadas:</strong> Elaboración y distribución de comidas preparadas de alta calidad, además del desarrollo de nuevos productos y recetas innovadoras.</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Nuestras Empresas - Diseño Estilo Corporativo con Imágenes Grandes -->
+<section id="success-stories" class="success-stories">
+    <div class="container">
+        <h2 class="section-title">Nuestras Empresas</h2>
+        <p class="section-intro">Descubre nuestras empresas líderes en innovación y excelencia en diversos sectores.   
+        </p>
+        <div class="cases-grid">
+            <div class="case-item">
+                <img src="images/5.png" alt="Empresa Inmobiliaria" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://sih.adaix.com/" target="_blank">
+                        <img src="images/logo-adaixsih.png" alt="Empresa Inmobiliaria" class="case-logo">
+                    </a>
+                    <p class="case-description">Revolucionando el sector inmobiliario con tecnología avanzada y servicios personalizados.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/construccion 2.png" alt="Edificios y Naves" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.nuevaigoma.com" target="_blank">
+                        <img src="images/logo.nhigoma.png" alt="Edificios y Naves" class="case-logo">
+                    </a>
+                    <p class="case-description">Proyectos industriales innovadores y sostenibles para empresas modernas.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/19.png" alt="Restaurante Moderno" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.gunnen.es/" target="_blank">
+                        <img src="images/logo.gunnen.png" alt="Restaurante Moderno" class="case-logo">
+                    </a>
+                    <p class="case-description">Experiencias culinarias únicas que combinan creatividad, innovación y calidad.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/Comida-preparas.png.png" alt="Fábrica de Comidas" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.flg.com" target="_blank">
+                        <img src="images/logo.flg.png" alt="Fábrica de Comidas" class="case-logo">
+                    </a>
+                    <p class="case-description">Comidas preparadas de alta calidad adaptadas a supermercados y empresas de retail.
+                        Visita nuestra web para más información.</p>
+                    </p>
+                </div>
+            </div>
+</section>
+<!-- Sección Equipo en Carrusel -->
+<section id="team" class="team">
+    <div class="container">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <p class="section-subtitle">Conoce a las personas detrás del éxito de nuestra empresa.</p>
+
+        <!-- Swiper Contenedor -->
+        <div class="swiper team-swiper">
+            <div class="swiper-wrapper">
+                <!-- Miembro 1 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/donjoaquin_1.1.png" alt="Joaquin Gonzalez">
+                        </div>
+                        <div class="card-content">
+                            <h3>Joaquin Gonzalez Iglesias</h3>
+                            <p>CEO y Socio principal</p>
+                            <a href="https://www.linkedin.com/in/yoanna-andrea-gonz%C3%A1lez-m%C3%A1rquez-08070211/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 2 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotoandrea.jpg" alt="Andrea Gonzalez">
+                        </div>
+                        <div class="card-content">
+                            <h3>Yoanna Andrea González Márquez</h3>
+                            <p>Gerente y Socia</p>
+                            <a href="https://www.linkedin.com/in/andrea-gonz%C3%A1lez-m%C3%A1rquez-08070211/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+            </section>
+ <!--testimonios--> 
+ <section id="testimonials-carousel" class="testimonials-carousel">
+    <div class="container">
+        <h2 class="testimonials-title">Testimonios de nuestros clientes</h2>
+        <!-- Contenedor Swiper con clase corregida -->
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+                <!-- Testimonio 1 -->
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>"El equipo de Higoma SL me ayudó a planificar mi futuro financiero de manera clara y profesional."</p>
+                        <footer>- María López</footer>
+                    </blockquote>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>"Gran asesoramiento personalizado y resultados efectivos. Los recomiendo al 100%."</p>
+                        <footer>- José Martínez</footer>
+                    </blockquote>
+                </div>
+                <!-- Testimonio 3 -->
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>"Gracias a Higoma SL logré diversificar mi cartera de manera eficiente."</p>
+                        <footer>- Ana Fernández</footer>
+                    </blockquote>
+                </div>
+                <!-- Testimonio 4 -->
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>"Increíble asesoramiento en fusiones y adquisiciones. Altamente recomendable."</p>
+                        <footer>- Pedro Gómez</footer>
+                    </blockquote>
+                </div>
+                <!-- Testimonio 5 -->
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>"Su experiencia financiera marcó la diferencia en mi planificación patrimonial."</p>
+                        <footer>- Laura Martínez</footer>
+                    </blockquote>
+                </div>
+            </div>
+</section>
+        <!--Preguntas frecuentes--> 
+
+        <section id="faq" class="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>¿Qué servicios ofrecen?</summary>
+                    <div class="faq-bubble">
+                        Consultoría financiera, inversiones y gestión patrimonial, adaptadas a tus necesidades.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde están ubicados?</summary>
+                    <div class="faq-bubble">
+                        Nuestra oficina principal está En Edificio torre de cristal, Planta 3 - local 4, A Coruña, España.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo contactarlos?</summary>
+                    <div class="faq-bubble">
+                        Puedes usar nuestro formulario de contacto, WhatsApp, o llamarnos al teléfono indicado.
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+    <!--localizacion-->
+       <section id="location" class="location" data-aos="fade-up">
+        <div class="container">
+            <h2>Encuéntranos</h2>
+            <p>Visítanos en nuestra oficina. Estamos aquí para ayudarte con tus necesidades.</p>
+            <div id="map" style="width: 100%; height: 300px; margin-top: 40px;"></div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <!-- 📌 Información de Contacto -->
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <p>Ponte en contacto con nosotros para cualquier consulta.</p>
+                <div class="address">
+                    <h3>Nuestras Ubicaciones</h3>
+                    <p><strong>Oficina Central 1:</strong> Edificio torre de cristal, Planta 7 - local 6, A Coruña, España</p>
+                    <p><strong>Oficina Central 2:</strong> Edificio torre de cristal, Planta 3 - local 4, A Coruña, España</p>
+                    <p><strong>Restaurante Gunnen:</strong> Rúa Juan Díaz Porlier, 15, 15009 A Coruña</p>
+                    <p><strong>Fábrica Comida preparas:</strong> Rúa Juan de la Cierva, 7, 15008 A Coruña</p>
+                    <p><strong>Inmobiliaria Adaix:</strong> Rúa Alcalde Canuto Berea, 1, 15003 A Coruña</p>
+                    <p><i class="fas fa-phone"></i> +34 679 24 21 25</p>
+                    <p><i class="fas fa-envelope"></i> contacto@higoma.es</p>
+                </div>
+            </div>
+    
+            <!-- 📋 Formulario de Contacto -->
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="text" placeholder="Asunto" required>
+                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+<!-- Pie de página -->
+
+<footer class="footer">
+    <p>&copy; 2024 Sociedad de Inversiones Higoma SL. Todos los derechos reservados.</p>
+    <ul>
+        <li><a href="https://www.facebook.com/people/SIH-Sociedad-de-Inversiones-Higoma/61572958014289/?mibextid=wwXIfr&rdid=yHL9y9Y18XGWTC7m&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18ZpNN2KLA%2F%3Fmibextid%3DwwXIfr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/sih-sociedad-de-inversiones-higoma-s-l/about/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/es/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    </ul>
+</footer>
+  <!-- 📌 Aviso de Cookies -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>Desde SIH Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas su uso.</p>
+    <button id="accept-cookies" class="cookie-btn accept">Aceptar</button>
+    <button id="reject-cookies" class="cookie-btn reject">Rechazar</button>
+</div>
+  <!-- 📌 Inclusión del archivo de JavaScript -->
+    <script src="script.v1.js"></script>
+<!--scripts-->          
+    <!-- Swiper JS teams-->
+    <script>
+        var swiper = new Swiper('.team-swiper', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true, // Habilita el bucle infinito
+            loopedSlides: 7, // Número total de slides (ajustar si tienes más)
+            loopFillGroupWithBlank: false, // Evita espacios vacíos
+            centeredSlides: true, // Centra las diapositivas para una transición fluida
+            autoplay: {
+                delay: 3000, // Cambia cada 3 segundos
+                disableOnInteraction: false, // Sigue en autoplay incluso si el usuario interactúa
+            },
+            speed: 600, // Hace la transición más suave
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 }
+            }
+        });
+
+    </script>
+
+    <!--scripts testimonios-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const swiperTestimonials = new Swiper('.testimonials-swiper', {
+        slidesPerView: 1, // Muestra una diapositiva a la vez
+        spaceBetween: 1, // Espacio entre diapositivas
+        loop: true, // Activa el loop infinito
+        autoplay: {
+            delay: 5000, // Cambia cada 5 segundos
+            disableOnInteraction: false, // No se detiene al interactuar
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: { slidesPerView: 3 }, // 2 testimonios en tabletas
+            1024: { slidesPerView: 4 }, // 3 testimonios en pantallas grandes
+        }
+    });
+});
+    </script>
+    <!--scripts pqfrecuentes-->    
+    <script>
+        AOS.init();
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+<!--animaciones-->
+<script>
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0 });
+    gsap.from(".hero p", { duration: 1.2, y: 50, opacity: 0, delay: 0.5 });
+    gsap.from(".btn", { duration: 1, scale: 0.8, opacity: 0, delay: 1 });
+</script>
+
+   <!-- Carga la API de Google Maps con la librería correcta -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzrWt9C2ZQPwBfyFJXDPPkZ-HGKeHwb7c&libraries=marker&callback=initMap"></script>
+<script>
+function initMap() {
+    const location = { lat: 43.3391389, lng: -8.4041389 };
+
+    const mapElement = document.getElementById("map");
+    if (!mapElement) {
+        console.error("El elemento #map no existe en el DOM.");
+        return;
+    }
+
+    const map = new google.maps.Map(mapElement, {
+        zoom: 14,
+        center: location,
+    });
+
+    new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Sociedad Inversiones Higoma SL - SIH"
+    });
+}
+
+    initMap();
+</script>
+<script>
+    // Inicializa el mapa al cargar la página
+    window.onload = initMap;
+</script>
+<script src="script.v1.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".navigation");
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+
+    // Controla el menú en pantallas pequeñas
+    function checkScreenSize() {
+        if (window.innerWidth <= 1100) {
+            menuToggle.style.display = "flex";
+        } else {
+            menuToggle.style.display = "none";
+        }
+    }
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    // Mostrar / Ocultar menú hamburguesa
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        navigation.classList.toggle("active");
+    });
+
+    // Manejo de clic en submenús
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", function (event) {
+            event.stopPropagation();
+            this.classList.toggle("open"); // Activa el submenú solo para este elemento
+        });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener("click", function (event) {
+        if (!navigation.contains(event.target) && !menuToggle.contains(event.target)) {
+            navigation.classList.remove("active");
+            dropdowns.forEach(dropdown => dropdown.classList.remove("open"));
+        }
+    });
+});
+</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const videoSection = document.querySelector(".hero"); // Asegúrate de que tu sección de video tenga esta clase
+
+    function updateHeader() {
+        const videoBottom = videoSection.offsetTop + videoSection.offsetHeight;
+        if (window.scrollY > videoBottom) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", updateHeader);
+});
+</script> 
+</body>
+</html>

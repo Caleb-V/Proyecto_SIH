@@ -1,0 +1,201 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding: 150px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+        url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+}
+
+/* Video de fondo */
+.video-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+overflow: hidden;
+}
+
+.video-background video {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Ajusta el video correctamente */
+filter: brightness(0.9); /* Oscurece un poco para mejorar el contraste */
+}
+/* Superposición */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 47, 158, 0.8), rgba(232, 163, 23, 0.5));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Títulos */
+.hero-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    opacity: 1; /* Mantenerlo siempre visible */
+    animation: floatTitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+    padding: 0 15px; /* Evitar que se corte en móviles */
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    max-width: 900px;
+    margin: 0 auto 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Siempre visible */
+    animation: floatSubtitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+    padding: 0 15px; /* Ajustar padding en móviles */
+}
+
+/* Botón */
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 12px 25px;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+    }
+}
+
+/* Ajustes en móviles */
+@media screen and (min-width: 250px) and (max-width: 1180px) {
+.header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background:transparent;
+padding: 15px 15px;
+z-index:400;
+transition: all 0.3s ease;
+}
+
+.header.scrolled {
+background:white;
+}
+
+.hero {
+margin-top: 0px; /* Para evitar que el contenido quede oculto detrás del header */
+}
+.video-background video {
+object-fit: cover;
+width: 100%;
+height: 100%;
+filter: brightness(0.5); /* Reducir brillo en móviles */
+}
+/* Contenedor que mantiene alineado el título y subtítulo */
+.hero-overlay {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 100%;
+height: 100%;
+padding: 10px;
+}
+/* Título centrado (sin desaparecer, solo efecto de entrada) */
+.hero-title {
+font-size: clamp(1.5rem, 3vw, 2.0rem);
+font-weight: bold;
+text-transform: uppercase;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+margin-bottom: 10px;
+width: 100%;
+opacity: 1; /* Mantenerlo siempre visible */
+animation: floatTitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+}
+
+/* Subtítulo centrado */
+.hero-subtitle {
+font-size: clamp(1rem, 3vw, 1.1rem);
+max-width: 80%;
+margin: 0 auto 15px;
+text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+opacity: 1; /* Siempre visible */
+animation: floatSubtitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+}
+
+.btn-primary {
+font-size: 0.7rem;
+align-items: center;
+margin-top: 0;
+padding: 10px 15px;
+}
+}

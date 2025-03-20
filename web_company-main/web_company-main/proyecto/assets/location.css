@@ -1,0 +1,33 @@
+/* Encuéntranos */
+.location {
+    background-color: white !important; /* Fondo completamente blanco */
+    color:#003366; /* Color del texto para mayor contraste */
+    padding: 80px 20px; /* Espaciado para que no se vea vacío */
+    text-align: center;
+}
+
+.location h2 {
+    font-size: 2.1em;
+    color: #003366; /* Azul oscuro para destacar */
+    margin-bottom: 20px;
+}
+
+.location p {
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 40px;
+}
+#map {
+    margin: 0 auto; /* Centrar el mapa horizontalmente */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste del mapa para que no tenga sombras ni bordes */
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px; /* Opcional, si quieres bordes redondeados */
+    box-shadow: none; /* Elimina cualquier sombra previa */
+}

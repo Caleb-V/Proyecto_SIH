@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sociedad de inversiones y consultoría financiera en España. Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta name="keywords" content="inversiones, finanzas, asesoramiento financiero, planificación patrimonial, gestión de capital">
+    <meta property="og:title" content="Sociedad Inversiones Higoma SL - Sih">
+    <meta property="og:description" content="Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta property="og:image" content="images/favicon.png">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Sociedad Inversiones Higoma SL - Sih</title>
+    <link rel="shortcut icon" href= "images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.v1.css">
+
+    <style>
+   /* Variables de colores */
+:root {
+    --primary-color: #00509e; /* Azul principal */
+    --secondary-color: #e8a317; /* Amarillo dorado */
+    --white: #ffffff; /* Blanco puro */
+    --text-color: #00264d; /* Azul oscuro para texto */
+
+}
+
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background:var(--white);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color:var(--text-color);
+}
+
+/* Encabezado */
+.header {
+    background:var(--white);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content:start;
+    padding-left: 40px;
+    align-items: center;
+}
+
+/* Logo */
+.logo-title {
+    display: flex;            /* Flexbox para organizar logo y texto */
+    align-items: center;      /* Alinea el logo y el título verticalmente */
+    justify-content: start;
+    margin-right:180px;      /* Empuja el logo y título hacia la izquierda */
+    text-decoration: none;    /* Elimina subrayado si es un enlace */
+}
+
+.logo {
+    max-height: 100px;         /* Tamaño máximo del logo */
+    margin-right: 10px;       /* Espacio entre el logo y el texto */
+}
+
+.company-title {
+    font-size: 2.1rem;        /* Tamaño del texto del título */
+    color: #00264d;           /* Color del texto */
+    font-weight: 600;         /* Hace el texto más grueso */
+}
+
+/* Estilo del menú */
+.navigation ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    position: relative;
+}
+
+.navigation ul li a {
+    font-size: 1.4rem;
+    color: #01005c;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    background-color: #f5c65e;
+    color: white;
+}
+
+/* Submenú */
+.has-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    font-size: 1.2rem;
+    color: #00264d;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e8a317;
+    color: white;
+}
+
+/* Estilo Responsive */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .navigation ul li {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: #003d73;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 250px;
+        border-radius: 10px;
+        margin-left: auto;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
+
+/* Menú de navegación */
+.header .navigation ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+    align-items: center;
+}
+
+.header .navigation ul li a {
+    font-size: 1.3rem; /* Aumentado de 1rem a 1.4rem */
+    color: #01005c;
+    text-decoration: none;
+    padding: 30px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.header .navigation ul li a:hover {
+    background-color: #e8a317;
+    color: #00264d;
+    transform: scale(1.1);
+}
+/* Botón hamburguesa (para móviles) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem; /* Aumentado de 1.5rem a 2rem */
+    color: white;
+    background: none;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #003d73;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .header .navigation ul li a {
+        font-size: 1rem; /* Reducido para pantallas más pequeñas */
+    }
+
+    .company-title {
+        font-size: 1.5rem; /* Tamaño reducido para pantallas pequeñas */
+    }
+}
+/* Icono del submenú */
+.has-dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.has-dropdown > a i {
+    margin-left: 10px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotar la flecha cuando se despliega el menú */
+.has-dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+/* Submenú General */
+.has-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Elementos del Submenú */
+.dropdown-menu li a {
+    font-size: 1.2rem;
+    color: #00264d;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e8a317;
+    color: white;
+}
+
+/* Icono del Submenú */
+.has-dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.has-dropdown > a i {
+    margin-left: 10px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotar la flecha cuando se despliega el submenú */
+.has-dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+/* Ajuste Responsive */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
+
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Fondo de Video */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+    filter: brightness(0.4); /* Oscurece ligeramente el video para mayor contraste */
+}
+
+/* Superposición */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 80, 158, 0.8), rgba(232, 163, 23, 0.5));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Títulos */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    animation: slideInLeft 1.5s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    animation: slideInRight 1.5s ease;
+}
+
+/* Botón */
+.btn-primary {
+    background: linear-gradient(90deg, #e8a317, #f5c65e);
+    color: var(--white);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Sobre Nosotros - Subpágina */
+.about-page {
+    background: linear-gradient(to bottom, #f9f9fb, #ffffff);
+    padding: 80px 20px;
+    color: #333;
+}
+
+.about-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-page h1 {
+    font-size: 3rem;
+    color: #00509e;
+    margin-bottom: 20px;
+}
+
+.about-page .intro {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.about-item {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00509e, #e8a317);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 2rem;
+}
+
+.about-item h3 {
+    font-size: 1.8rem;
+    color: #00509e;
+    margin-bottom: 15px;
+}
+
+.about-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-item {
+        max-width: 90%;
+    }
+}
+
+/* Servicios */
+.services {
+    background: #f9f9fb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 3rem;
+    color: #00509e;
+    margin-bottom: 20px;
+}
+
+.services .intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.services .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 30px;
+    position: relative;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Traer al frente */
+}
+
+.card .icon {
+    font-size: 3rem;
+    color: #00509e;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.card:hover .icon {
+    color: #e8a317;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #003d73;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Posiciones dinámicas */
+.position-1 {
+    transform: translateY(-20px);
+}
+.position-2 {
+    transform: translateY(20px);
+}
+.position-3 {
+    transform: translateY(-30px);
+}
+.position-4 {
+    transform: translateY(10px);
+}
+
+/* Hover dinámico */
+.card:hover {
+    transform: translateY(-20px) scale(1.05); /* Se eleva más y crece ligeramente */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .services .grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .position-1, .position-2, .position-3, .position-4 {
+        transform: none; /* Elimina los desplazamientos en pantallas pequeñas */
+    }
+}
+
+/* Casos de Éxito */
+/* Casos de Éxito */
+.success-stories {
+    background: #f9f9fb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.success-stories h2 {
+    font-size: 3rem;
+    color: #00509e;
+    margin-bottom: 20px;
+}
+
+.success-stories .intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.success-stories .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 30px;
+    position: relative;
+}
+
+.case-item {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Mantiene el color del texto original */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.case-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Traer al frente */
+}
+
+.case-item .case-logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.case-item:hover .case-logo {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.case-item h3 {
+    font-size: 1.8rem;
+    color: #003d73;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.case-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Posiciones dinámicas */
+.position-1 {
+    transform: translateY(-20px);
+}
+.position-2 {
+    transform: translateY(20px);
+}
+.position-3 {
+    transform: translateY(-30px);
+}
+.position-4 {
+    transform: translateY(10px);
+}
+
+/* Hover dinámico */
+.case-item:hover {
+    transform: translateY(-20px) scale(1.05); /* Se eleva más y crece ligeramente */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .success-stories .cases-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .position-1, .position-2, .position-3, .position-4 {
+        transform: none; /* Elimina los desplazamientos en pantallas pequeñas */
+    }
+}
+
+
+/* Galería de Proyectos */
+.gallery-section {
+    background: #f9f9fb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    color: #00509e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gallery-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Diseño de la galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Agrandado al pasar el ratón */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Modal para ampliar imagen */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-caption {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 80%;
+    }
+
+    .gallery-item p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    background: var(--footer-bg);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s;
+}
+
+.footer ul li a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+/* Sección Equipo */
+.team {
+    background: #f9f9fb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.team h2 {
+    color: #00509e;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.team .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team .team-photo {
+    width: 150px; /* Tamaño de las fotos */
+    height: 150px;
+    border-radius: 50%; /* Fotos redondeadas */
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00509e;
+}
+
+.team .card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.team .linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #0077b5; /* Color de LinkedIn */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.team .linkedin-link:hover {
+    color: #00509e; /* Cambia de color al pasar el ratón */
+}
+
+.team .linkedin-link i {
+    margin-right: 5px; /* Espaciado entre el icono y el texto */
+}
+
+/* Testimonios */
+.testimonials-carousel {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--background-color);
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: var(--white);
+    width: 100%; /* Mantiene el ancho ajustable */
+    max-width: 350px; /* Reduce el tamaño máximo del cuadro */
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.05);
+}
+
+blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.3;
+    color: var(--text-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+footer {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/*boton next*/
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.swiper-button-prev {
+    left: -50px; /* Ajusta la posición a la izquierda */
+}
+
+.swiper-button-next {
+    right: -50px; /* Ajusta la posición a la derecha */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+
+
+/* Contacto */
+.contact {
+    background: #003d73; /* Azul oscuro que contrasta con el texto */
+    color: #ffffff; /* Texto blanco para contraste */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.3rem;
+    color: #f5c65e; /* Amarillo dorado para resaltar el título */
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #e8eaf6; /* Un tono claro para el texto */
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    grid-column: span 2;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff; /* Fondo blanco para mayor contraste */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.contact-form .submit-btn {
+    background: #f5c65e; /* Amarillo dorado */
+    color: #003d73; /* Azul oscuro */
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.2rem;
+    grid-column: span 2;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background: #e8a317; /* Tono más oscuro del amarillo dorado */
+    transform: scale(1.05);
+}
+
+
+/* Botón flotante de WhatsApp */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background: #25d366;
+    color: var(--white);
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-floating:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+    </style>
+
+<body>
+     
+    <!-- Botón de Modo Oscuro -->
+    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Activar o desactivar modo oscuro">Modo Oscuro</button>
+
+    <!-- Botón de WhatsApp Flotante -->
+<a href="https://wa.me/1234567890?text=Hola%20Sociedad%20Higoma%20SL%2C%20estoy%20interesado%20en%20sus%20servicios.%20¿Podrían%20brindarme%20más%20información%3F"
+target="_blank"
+class="whatsapp-floating"
+aria-label="Contáctanos por WhatsApp"
+onclick="trackWhatsappClick()">
+ <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Modal para opciones (opcional) -->
+<div id="whatsapp-modal" class="modal">
+ <div class="modal-content">
+     <p>¿Qué necesitas?</p>
+     <a href="https://wa.me/1234567890?text=Información%20sobre%20servicios" class="btn">Información sobre servicios</a>
+     <a href="https://wa.me/1234567890?text=Soporte%20técnico" class="btn">Soporte técnico</a>
+     <button onclick="closeModal()">Cerrar</button>
+ </div>
+</div>
+
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo-title">
+                <img src="images/logo-sih.png.png"Logo Sociedad Higoma SL" class="logo" loading="lazy">
+                <span class="company-title">Sociedad de Inversiones Higoma SL</span>
+            </a>
+            
+            <!-- Menú de navegación -->
+            <nav class="navigation">
+                <ul>
+                    <!-- Menú Principal -->
+                    <li class="has-dropdown">
+                        <a href="sobre-nosotros.html">¿Quiénes Somos? <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li><a href="galeria.html">Galería</a></li>
+                            <li><a href="testimonios.html">Testimonios</a></li>
+                            <li><a href="casosdeexito.html">Casos de exitos</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="servicios.html">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-consulting.html">Consultoría Financiera</a></li>
+                            <li><a href="asset-management.html">Gestión Patrimonial</a></li>
+                            <li><a href="global-investments.html">Inversiones Globales</a></li>
+                            <li><a href="mergers-acquisitions.html">Fusiones y Adquisiciones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            
+
+            
+            <!-- Botón Hamburguesa (Responsive) -->
+            <button class="menu-toggle" aria-label="Abrir Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>  
+    
+<!-- parte principal con fondo -->
+
+<section class="hero">
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="tu-video.mp4.mp4" type="video/mp4">
+            <!-- Texto alternativo si el navegador no soporta video -->
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+    <div class="hero-overlay">
+        <div class="container">
+            <h1 class="hero-title">Aseguramos tu éxito patrimonial y financiero</h1>
+            <p class="hero-subtitle">Transformamos tu patrimonio en un legado duradero, brindándote estrategias personalizadas y asesoramiento con expertos para lograr tus metas financieras.</p>
+            <a href="#contact" class="btn btn-primary">Contáctanos</a>
+        </div>
+    </div>
+</section>
+
+
+             <!--testimonios--> 
+
+             <section id="testimonials-carousel" class="testimonials-carousel">
+                <h2>Lo que Dicen Nuestros Clientes</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <p>"El equipo de Higoma SL me ayudó a planificar mi futuro financiero de manera clara y profesional."</p>
+                                <footer>- María López</footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <p>"Gran asesoramiento personalizado y resultados efectivos. Los recomiendo al 100%."</p>
+                                <footer>- José Martínez</footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <p>"Gracias a Higoma SL logré diversificar mi cartera de manera eficiente."</p>
+                                <footer>- Ana Fernández</footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <p>"Increíble asesoramiento en fusiones y adquisiciones. Altamente recomendable."</p>
+                                <footer>- Pedro Gómez</footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <p>"Su experiencia financiera marcó la diferencia en mi planificación patrimonial."</p>
+                                <footer>- Laura Martínez</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <!-- Botones de navegación -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            
+                </div>
+            </section>
+            
+            
+            
+        <!--Preguntas frecuentes--> 
+
+        <section id="faq" class="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>¿Qué servicios ofrecen?</summary>
+                    <div class="faq-bubble">
+                        Consultoría financiera, inversiones y gestión patrimonial, adaptadas a tus necesidades.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde están ubicados?</summary>
+                    <div class="faq-bubble">
+                        Nuestra oficina principal está En Edificio torre de cristal, Planta 3 - local 4, A Coruña, España.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo contactarlos?</summary>
+                    <div class="faq-bubble">
+                        Puedes usar nuestro formulario de contacto, WhatsApp, o llamarnos al teléfono indicado.
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+    <!--localizacion-->
+       <section id="location" class="location" data-aos="fade-up">
+        <div class="container">
+            <h2>Encuéntranos</h2>
+            <p>Visítanos en nuestra oficina. Estamos aquí para ayudarte con tus necesidades.</p>
+            <div id="map" style="width: 100%; height: 300px; margin-top: 40px;"></div>
+        </div>
+    </section>
+    
+    
+    <!-- Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes preguntas? Llena el formulario y te responderemos a la brevedad.</p>
+            <form class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input id="name" type="text" placeholder="Tu Nombre " required aria-label="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input id="email" type="email" placeholder="Tu Correo Electrónico" required aria-label="Correo Electrónico">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" placeholder="Escribe tu mensaje aquí..." required aria-label="Mensaje"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+            
+        </div>
+    </section>
+
+     <!-- Pie de página -->
+
+     <footer class="footer">
+        <p>&copy; 2024 Sociedad de Inversiones Higoma SL. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+        </ul>
+    </footer>
+    
+
+    <!--scripts testimonios-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 2, // Número de testimonios visibles a la vez
+    spaceBetween: 30, // Espacio entre testimonios
+    loop: true, // Desplazamiento infinito
+    autoplay: {
+        delay: 3000, // Cambia cada 5 segundos automáticamente
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        // Configuración responsiva
+        320: {
+            slidesPerView: 1, // 1 testimonio en pantallas pequeñas
+        },
+        768: {
+            slidesPerView: 2, // 2 testimonios en tabletas
+        },
+        1024: {
+            slidesPerView: 3, // 3 testimonios en pantallas más grandes
+        },
+    },
+});
+
+    </script>
+    
+
+    <!--scripts pqfrecuentes-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+<!--animaciones-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0 });
+    gsap.from(".hero p", { duration: 1.2, y: 50, opacity: 0, delay: 0.5 });
+    gsap.from(".btn", { duration: 1, scale: 0.8, opacity: 0, delay: 1 });
+</script>
+
+    <!--mi ubicacion-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoNT4wmYFR0WTz6PRgVDcm0NbPeG_H5Ew"></script>
+    <script>
+    function initMap() {
+        // Coordenadas de la oficina
+        const location = { lat: 43.3391389, lng: -8.4041389}; // Cambia a tus coordenadas (Madrid como ejemplo)
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 14, // Nivel de zoom inicial
+            center: location, // Centro del mapa
+        });
+
+        // Marcador en la ubicación
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Sociedad Inversiones Higoma SL - Sih",
+        });
+    }
+
+    // Inicializa el mapa al cargar la página
+    window.onload = initMap;
+</script>
+<script src="script.v1.js" defer></script>
+<script>
+    // Botón hamburguesa y navegación principal
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.navigation');
+
+// Alternar el menú en dispositivos móviles
+menuToggle.addEventListener('click', () => {
+    navigation.classList.toggle('active');
+});
+
+// Submenús
+const dropdownItems = document.querySelectorAll('.has-dropdown');
+
+// Alternar submenús en móviles
+dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        // Evitar redirección si se hace clic en el enlace principal
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            // Alternar el submenú correspondiente
+            item.classList.toggle('active');
+        }
+    });
+});
+
+    // Selecciona elementos
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('modalImage');
+    const caption = document.getElementById('caption');
+    const closeModal = document.querySelector('.close');
+
+    // Abre el modal al hacer clic en una imagen
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = item.src;
+            caption.textContent = item.alt;
+        });
+    });
+
+    // Cierra el modal al hacer clic en el botón cerrar
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Cierra el modal al hacer clic fuera de la imagen
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Opcional para Movilidad
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".navigation");
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+
+    // Alternar navegación en dispositivos móviles
+    menuToggle.addEventListener("click", () => {
+        navigation.classList.toggle("active");
+    });
+
+    // Manejo de submenús
+    dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+
+        // Alternar submenú con teclado (Enter o Espacio)
+        link.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleMenu(dropdown);
+            }
+        });
+
+        // Alternar submenú al hacer clic
+        link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                toggleMenu(dropdown);
+            }
+        });
+    });
+
+    // Cerrar submenús al hacer clic fuera de ellos
+    document.addEventListener("click", (e) => {
+        dropdowns.forEach((dropdown) => {
+            if (!dropdown.contains(e.target)) {
+                closeMenu(dropdown);
+            }
+        });
+    });
+
+    // Función para alternar submenú
+    function toggleMenu(dropdown) {
+        const isOpen = dropdown.classList.contains("open");
+        closeAllMenus(); // Cierra otros menús
+        if (!isOpen) {
+            dropdown.classList.add("open");
+            dropdown.querySelector("a").setAttribute("aria-expanded", "true");
+        }
+    }
+
+    // Función para cerrar todos los submenús
+    function closeAllMenus() {
+        dropdowns.forEach((dropdown) => closeMenu(dropdown));
+    }
+
+    // Función para cerrar un submenú
+    function closeMenu(dropdown) {
+        dropdown.classList.remove("open");
+        dropdown.querySelector("a").setAttribute("aria-expanded", "false");
+    }
+
+    // Inicializar Swiper
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1, // Muestra un testimonio por diapositiva
+        spaceBetween: 30, // Espaciado entre diapositivas
+        loop: true, // Habilita el desplazamiento infinito
+        autoplay: {
+            delay: 5000, // Cambia automáticamente cada 5 segundos
+            disableOnInteraction: false, // No pausa el autoplay cuando se usa la navegación
+        },
+        navigation: {
+            nextEl: '.swiper-button-next', // Activa el botón "Next"
+            prevEl: '.swiper-button-prev', // Activa el botón "Prev"
+        },
+    });
+}); // Asegúrate de cerrar correctamente este bloque
+
+    </script>
+</body>
+</html>

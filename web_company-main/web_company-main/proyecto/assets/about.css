@@ -1,0 +1,85 @@
+/* Sección Sobre Nosotros */
+.about-page {
+    background: white;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh; /* Asegura que ocupe la altura completa de la pantalla */
+}
+
+/* Contenedor */
+.about-page .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Título principal grande y llamativo */
+.about-title {
+    font-size: 3.1rem; /* Aumenta el tamaño del título */
+    font-weight: bold;
+    color:#003366!important; /* Color llamativo */
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Descripción */
+.about-description {
+    font-size: 1.3rem;
+    color: #003366!important; /* Azul oscuro */
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+}
+
+/* Botón Saber Más */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(135deg, #00509e, #e8a317); /* Azul y dorado */
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #003366, #d48f15);
+    transform: scale(1.1);
+}
+
+/* RESPONSIVIDAD */
+/* Ajustes para tablets */
+@media (max-width: 1024px) {
+    .about-title {
+        font-size: 3rem; /* Reduce un poco en tablets */
+    }
+
+    .about-description {
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}

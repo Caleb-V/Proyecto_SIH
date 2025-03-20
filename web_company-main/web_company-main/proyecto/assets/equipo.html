@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Sociedad de inversiones y consultoría financiera en España. Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta name="keywords" content="inversiones, finanzas, asesoramiento financiero, planificación patrimonial, gestión de capital">
+    <meta property="og:title" content="Sociedad Inversiones Higoma SL - Sih">
+    <meta property="og:description" content="Gestionamos capital y ofrecemos asesoramiento patrimonial personalizado.">
+    <meta property="og:image" content="images/favicon.png">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Sociedad Inversiones Higoma SL - SIH</title>
+    <link rel="shortcut icon" href= "images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.v1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        /* Variables de colores */
+        :root {
+            --primary-color: #00509e; /* Azul principal */
+            --secondary-color: #e8a317; /* Amarillo dorado */
+            --white: white; /* Blanco puro */
+            --text-color: #003366; /* Azul oscuro para texto */
+        }
+           /* ==== ESTILO GENERAL ==== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background:transparent;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Tamaños de encabezados dinámicos */
+        h1 { font-size: clamp(2.5rem, 4vw, 3.1rem); }
+        h2 { font-size: clamp(2.2rem, 3vw, 3rem); }
+        h3 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+        p  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
+        
+        
+        /* ==== ENCABEZADO DINÁMICO ==== */
+        .header {
+            background: transparent;
+            padding: 15px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        /* Cambia a fondo blanco al hacer scroll */
+        .header.scrolled {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ajusta los colores del menú cuando el fondo es blanco */
+        .header.scrolled .navigation ul li a {
+            color: #003366!important;
+        }
+        
+        .header.scrolled .logo-title .company-title {
+            color:#003366;
+        }
+        
+        .header.scrolled .menu-toggle {
+            color: #003366;
+        }
+        
+        /* ==== LOGO Y TÍTULO ==== */
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-grow: 1;
+            justify-content: flex-start;
+            position: absolute;
+            top: 50%; /* Ajusta el logo más hacia el centro */
+            transform: translateY(-50%);
+            left: 5px;
+        }
+        
+        .logo {
+            max-height: 70px;
+            margin-left: 0;
+        }
+        
+        .company-title {
+            font-size: 1.0rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            left: auto;
+            white-space: nowrap;
+        }
+        
+        /* ==== MENÚ DE NAVEGACIÓN SIEMPRE VISIBLE ==== */
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            flex-grow: 5;
+            padding: 10px 0;
+            margin-left: 150px; /* Ajusta el espacio entre el logo y el menú */
+        }
+        
+        .navigation ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navigation ul li {
+            position: relative;
+        }
+        
+        /* ==== ESTILOS DEL MENÚ ==== */
+        .navigation ul li a {
+            font-size: 1rem;
+            font-weight: 600;
+            color:var(--secondary-color)!important;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .navigation ul li a:hover {
+            background-color:white;
+            color: #003a80 !important;
+        }
+        
+        /* ==== SUBMENÚ OCULTO POR DEFECTO ==== */
+        .has-dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.973);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            list-style: none;
+            top: 100%;
+            left: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .has-dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li a {
+            font-size: 1rem;
+            color: #00509e !important;
+            padding: 12px 20px;
+            display: block;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.973);
+            color: #003a80 !important;
+        }
+        
+        /* ==== MENÚ HAMBURGUESA (MÓVILES) ==== */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: #00509e;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* ==== RESPONSIVIDAD ==== */
+        
+        /* Tablets */
+        @media (max-width: 992px) {
+            .navigation ul {
+                gap: 10px;
+            }
+        }
+        
+        /* Móviles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        
+            .navigation {
+                display: flex;
+                flex-direction: column;
+                background: var(--white);
+                position: absolute;
+                top: 70px;
+                right: 15px;
+                width: 180px;
+                border-radius: 8px;
+                padding: 10px;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            }
+        
+            .navigation ul {
+                flex-direction: column;
+                width: 98%;
+            }
+        
+            .navigation ul li a {
+                display: block;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+/* Hero */
+.hero {
+            position: relative;
+            height:60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: clamp(2.0rem, 5vw, 3rem);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        .btn-primary {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+
+/* Fondo de Video */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+    filter: brightness(0.8); /* Oscurece ligeramente el video para mayor contraste */
+}
+
+/* Superposición */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 80, 158, 0.8), rgba(232, 163, 23, 0.5));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Títulos */
+.hero-title {
+    font-size: 10rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    animation: slideInLeft 1.5s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    animation: slideInRight 1.5s ease;
+}
+
+/* Botón */
+.btn-primary {
+    background: linear-gradient(90deg, #e8a317, #f5c65e);
+    color: var(--white);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 204, 0, 0.8);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Footer */
+.footer {
+    background: var(--text-color); /* Color corporativo */
+    color: var(--secondary-color), IMP !important; /* Asegura que el texto sea visible */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2.5rem;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+/* Corrección del hover para que use un color fijo */
+.social-links a:hover {
+    color:var(--secondary-color); /* Dorado para resaltar */
+    transform: scale(2.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Sección Equipo */
+.team {
+    padding: 50px 20px;
+    background: var(--white)!important;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color:black;
+    margin-bottom: 40px;
+}
+
+/* Swiper Contenedor */
+.swiper-container {
+    max-width: 100%;
+    background-color:var(--white); /* Color blanco */
+    margin: 0 auto;
+    overflow: hidden;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjetas */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Foto de perfil */
+.card-photo {
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Contenido */
+.card-content {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color:black;
+    margin-bottom: 10px;
+}
+
+.linkedin-link {
+    font-size: 0.9rem;
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.linkedin-link i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+.linkedin-link:hover {
+    color: #00509e;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .card {
+        max-width: 240px;
+    }
+
+    .card-photo {
+        height: 130px;
+        width: 130px;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+
+    .linkedin-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 200px;
+    }
+
+    .card-photo {
+        height: 110px;
+        width: 110px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.85rem;
+    }
+
+    .linkedin-link {
+        font-size: 0.8rem;
+    }
+}
+/* Botón flotante de WhatsApp */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background: #25d366;
+    color: var(--white);
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-floating:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+</style>
+<body>
+    <!-- Botón de WhatsApp Flotante -->
+<a href="https://wa.me/1234567890?text=Hola%20Sociedad%20Higoma%20SL%2C%20estoy%20interesado%20en%20sus%20servicios.%20¿Podrían%20brindarme%20más%20información%3F"
+target="_blank"
+class="whatsapp-floating"
+aria-label="Contáctanos por WhatsApp"
+onclick="trackWhatsappClick()">
+ <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Modal para opciones (opcional) -->
+<div id="whatsapp-modal" class="modal">
+ <div class="modal-content">
+     <p>¿Qué necesitas?</p>
+     <a href="https://wa.me/1234567890?text=Información%20sobre%20servicios" class="btn">Información sobre servicios</a>
+     <a href="https://wa.me/1234567890?text=Soporte%20técnico" class="btn">Soporte técnico</a>
+     <button onclick="closeModal()">Cerrar</button>
+ </div>
+</div>
+
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+           <a href="index.html" class="logo-title">
+    <img src="images/logo-sih.png.png" alt="Logo Sociedad Higoma SL" class="logo">
+    <span class="company-title">Sociedad de Inversiones Higoma SL</span>
+		</a>
+
+            <!-- Menú de navegación -->
+            <nav class="navigation">
+                <ul>
+                    <!-- Menú Principal -->
+                    <li class="has-dropdown">
+                        <a href="sobre-nosotros.html">Compañia<i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li><a href="testimonios.html">Testimonios</a></li>
+                            <li><a href="casosdeexito.html">Nuestras empresas</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="servicios.html">Proyectos <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón Hamburguesa (Responsive) -->
+            <button class="menu-toggle" aria-label="Abrir Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>  
+    
+<!-- parte principal con fondo -->
+
+<section class="hero">
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="tu-video.mp4.mp4" type="video/mp4">
+            <!-- Texto alternativo si el navegador no soporta video -->
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+    <div class="hero-overlay">
+        <div class="container">
+            <h1 class="hero-title">Aseguramos tu éxito patrimonial y financiero</h1>
+            <p class="hero-subtitle">Transformamos tu patrimonio en un legado duradero, brindándote estrategias personalizadas y asesoramiento con expertos para lograr tus metas financieras.</p>
+            <a href="#contact" class="btn btn-primary">Contáctanos</a>
+        </div>
+    </div>
+</section>
+<!-- Sección Sobre Nosotros -->
+<section id="about" class="about-page">
+    <div class="container">
+        <h1 class="about-title">SIH: Construcción, Inmobiliaria y Sostenibilidad</h1>
+        <p class="about-description">
+            En Sociedad de Inversiones Higoma SL (SIH), transformamos desafíos en oportunidades mediante estrategias inmobiliarias y patrimoniales sólidas. 
+            Nuestro compromiso es la excelencia, la confianza y la rentabilidad sostenible.
+        </p>
+        <a href="sobre-nosotros.html" class="btn">Saber más</a>
+    </div>
+</section>
+
+        <!--Servicios-->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">
+                Descubre nuestras áreas de especialización y cómo podemos ayudarte a lograr tus objetivos.
+            </p>
+    
+            <!-- Servicio 1: Gestión Inmobiliaria -->
+            <div class="service-row">
+                <div class="service-image">
+                    <img src="images/inmobiliaria.png" alt="Gestión Inmobiliaria">
+                </div>
+                <div class="service-content">
+                    <h3>Gestión Inmobiliaria</h3>
+                    <p>
+                        Ofrecemos servicios completos de compra y venta de propiedades, gestión de alquileres y administración de propiedades.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Servicio 2: Gestión Patrimonial -->
+            <div class="service-row reverse">
+                <div class="service-image">
+                    <img src="images/Patrimonial.png" alt="Gestión Patrimonial">
+                </div>
+                <div class="service-content">
+                    <h3>Gestión Patrimonial</h3>
+                    <p>
+                        Estrategias personalizadas para la planificación financiera, asesoramiento en inversiones y protección de activos.
+                    </p>
+                </div>
+            </div>
+    
+           <!-- Servicio 3: Construcción -->
+        <div class="service-row">
+        <div class="service-video">
+        <video width="100%" autoplay loop muted playsinline>
+            <source src="images/Video-construcción.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        </div>
+        <div class="service-content">
+        <h3>Construcción</h3>
+        <p>
+            Diseño y construcción de proyectos Edificios residenciales y locales comerciales, así como servicios de renovación y remodelación.
+        </p>
+        </div>
+</div>
+
+    
+            <!-- Servicio 4: Consultoría Empresarial -->
+            <div class="service-row reverse">
+                <div class="service-image">
+                    <img src="images/Consultoria.png" alt="Consultoría Empresarial">
+                </div>
+                <div class="service-content">
+                    <h3>Consultoría Empresarial</h3>
+                    <p>
+                        Asesoramiento estratégico en negocios, consultoría gastronómica y soluciones para la industria alimentaria.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Servicio 5: Gastronomía & Alimentación -->
+            <div class="service-row">
+                <div class="service-image">
+                    <img src="images/Cocina.png.png" alt="Gastronomía y Alimentación">
+                </div>
+                <div class="service-content">
+                    <h3>Gastronomía & Alimentación</h3>
+                <p>
+                    Ofrecemos servicios en dos áreas principales:
+                    </p>
+                <ul>
+                <li><strong>Restaurantes de Alto Nivel:</strong> Experiencias gastronómicas excepcionales en nuestros restaurantes de alta categoría.</li>
+                <li><strong>Producción de Comidas Preparadas:</strong> Elaboración y distribución de comidas preparadas de alta calidad, además del desarrollo de nuevos productos y recetas innovadoras.</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Nuestras Empresas - Diseño Estilo Corporativo con Imágenes Grandes -->
+<section id="success-stories" class="success-stories">
+    <div class="container">
+        <h2 class="section-title">Nuestras Empresas</h2>
+        <p class="section-intro">Descubre nuestras empresas líderes en innovación y excelencia en diversos sectores.
+            
+        </p>
+        <div class="cases-grid">
+            <div class="case-item">
+                <img src="images/5.png" alt="Empresa Inmobiliaria" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://sih.adaix.com/" target="_blank">
+                        <img src="images/logo-adaixsih.png" alt="Empresa Inmobiliaria" class="case-logo">
+                    </a>
+                    <p class="case-description">Revolucionando el sector inmobiliario con tecnología avanzada y servicios personalizados.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/construccion 2.png" alt="Edificios y Naves" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.nuevaigoma.com" target="_blank">
+                        <img src="images/logo.nhigoma.png" alt="Edificios y Naves" class="case-logo">
+                    </a>
+                    <p class="case-description">Proyectos industriales innovadores y sostenibles para empresas modernas.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/19.png" alt="Restaurante Moderno" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.gunnen.es/" target="_blank">
+                        <img src="images/logo.gunnen.png" alt="Restaurante Moderno" class="case-logo">
+                    </a>
+                    <p class="case-description">Experiencias culinarias únicas que combinan creatividad, innovación y calidad.
+                        Visita nuestra web para más información.
+                    </p>
+                </div>
+            </div>
+            <div class="case-item">
+                <img src="images/Comida-preparas.png.png" alt="Fábrica de Comidas" class="case-background">
+                <div class="case-overlay">
+                    <a href="https://www.flg.com" target="_blank">
+                        <img src="images/logo.flg.png" alt="Fábrica de Comidas" class="case-logo">
+                    </a>
+                    <p class="case-description">Comidas preparadas de alta calidad adaptadas a supermercados y empresas de retail.
+                        Visita nuestra web para más información.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Sección Equipo en Carrusel -->
+<section id="team" class="team">
+    <div class="container">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <p class="section-subtitle">Conoce a las personas detrás del éxito de nuestra empresa.</p>
+
+        <!-- Swiper Contenedor -->
+        <div class="swiper team-swiper">
+            <div class="swiper-wrapper">
+                <!-- Miembro 1 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/donjoaquin_1.1.png" alt="Joaquin Gonzalez">
+                        </div>
+                        <div class="card-content">
+                            <h3>Joaquin Gonzalez Iglesias</h3>
+                            <p>CEO - Administrador</p>
+                            <a href="https://www.linkedin.com/in/joaquin-gonzalez-iglesias/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 2 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotoandrea.png" alt="Andrea Gonzalez">
+                        </div>
+                        <div class="card-content">
+                            <h3>Andrea Gonzalez</h3>
+                            <p>Gerente general</p>
+                            <a href="https://www.linkedin.com/in/andrea-gonz%C3%A1lez-m%C3%A1rquez-08070211/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 3 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotoivan.jpg" alt="Ivan Quiroga">
+                        </div>
+                        <div class="card-content">
+                            <h3>Ivan Quiroga</h3>
+                            <p>Responsable Financiero</p>
+                            <a href="https://www.linkedin.com/in/iv%C3%A1n-quiroga-rodr%C3%ADguez-651614113/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 4 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/gabriel.png" alt="Gabriel Santiago">
+                        </div>
+                        <div class="card-content">
+                            <h3>Gabriel Santiago</h3>
+                            <p>Project Manager</p>
+                            <a href="https://www.linkedin.com/in/gabriel-a-santiago-parra-78b557209/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 5 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotofernando.jpg" alt="Fernando Castro">
+                        </div>
+                        <div class="card-content">
+                            <h3>Fernando Castro</h3>
+                            <p>Responsable IT</p>
+                            <a href="https://www.linkedin.com/in/fernando-ariel-castro-490455127/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 6 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotoraquel.png" alt="Raquel Vázquez Meleiro">
+                        </div>
+                        <div class="card-content">
+                            <h3>Raquel Vázquez</h3>
+                            <p>Community Manager</p>
+                            <a href="https://www.linkedin.com/in/raquel-v%C3%A1zquez-meleiro-02a582345/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miembro 7 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-photo">
+                            <img src="images/fotoroberto.png" alt="Roberto Montero Vasquez">
+                        </div>
+                        <div class="card-content">
+                            <h3>Roberto Montero</h3>
+                            <p>Agente inmobiliario Adaix</p>
+                            <a href="https://www.linkedin.com/in/robertomonterov%C3%A1zquez/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+             <!--testimonios--> 
+             <section id="testimonials-carousel" class="testimonials-carousel">
+                <div class="container">
+                    <h2>Testimonios de nuestros clientes</h2>
+            
+                    <!-- Contenedor Swiper con clase corregida -->
+                    <div class="swiper testimonials-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Testimonio 1 -->
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <p>"El equipo de Higoma SL me ayudó a planificar mi futuro financiero de manera clara y profesional."</p>
+                                    <footer>- María López</footer>
+                                </blockquote>
+                            </div>
+                            <!-- Testimonio 2 -->
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <p>"Gran asesoramiento personalizado y resultados efectivos. Los recomiendo al 100%."</p>
+                                    <footer>- José Martínez</footer>
+                                </blockquote>
+                            </div>
+                            <!-- Testimonio 3 -->
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <p>"Gracias a Higoma SL logré diversificar mi cartera de manera eficiente."</p>
+                                    <footer>- Ana Fernández</footer>
+                                </blockquote>
+                            </div>
+                            <!-- Testimonio 4 -->
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <p>"Increíble asesoramiento en fusiones y adquisiciones. Altamente recomendable."</p>
+                                    <footer>- Pedro Gómez</footer>
+                                </blockquote>
+                            </div>
+                            <!-- Testimonio 5 -->
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <p>"Su experiencia financiera marcó la diferencia en mi planificación patrimonial."</p>
+                                    <footer>- Laura Martínez</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+            
+                        <!-- Botones de navegación Swiper -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            
+        <!--Preguntas frecuentes--> 
+
+        <section id="faq" class="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>¿Qué servicios ofrecen?</summary>
+                    <div class="faq-bubble">
+                        Consultoría financiera, inversiones y gestión patrimonial, adaptadas a tus necesidades.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde están ubicados?</summary>
+                    <div class="faq-bubble">
+                        Nuestra oficina principal está En Edificio torre de cristal, Planta 3 - local 4, A Coruña, España.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo contactarlos?</summary>
+                    <div class="faq-bubble">
+                        Puedes usar nuestro formulario de contacto, WhatsApp, o llamarnos al teléfono indicado.
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+    <!--localizacion-->
+       <section id="location" class="location" data-aos="fade-up">
+        <div class="container">
+            <h2>Encuéntranos</h2>
+            <p>Visítanos en nuestra oficina. Estamos aquí para ayudarte con tus necesidades.</p>
+            <div id="map" style="width: 100%; height: 300px; margin-top: 40px;"></div>
+        </div>
+    </section>
+    
+    
+    <!-- Contacto -->
+    <section class="contact">
+        <div class="contact-container">
+            <!-- Sección de información -->
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <p>Ponte en contacto con nosotros para cualquier consulta.</p>
+                <div class="address">
+                    <h3>Nuestras Ubicaciones</h3>
+                    <p><strong>Oficina Central:</strong> Edificio torre de cristal, Planta 3 - local 4, A Coruña, España</p>
+                    <p><strong>Restaurante Gunnen:</strong> Rúa Juan Díaz Porlier, 15, 15009 A Coruña</p>
+                    <p><strong>Fábrica Comida preparas:</strong> Rúa Juan de la Cierva, 7, 15008 A Coruña</p>
+                    <p><strong>Inmobiliaria Adaix:</strong> Rúa Alcalde Canuto Berea, 1, 15003 A Coruña</p>
+                    <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                    <p><i class="fas fa-envelope"></i> contacto@higoma.es</p>
+                </div>
+            </div>
+    
+            <!-- Sección del formulario -->
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo Electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Pie de página -->
+
+     <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Sociedad de Inversiones Higoma SL. Todos los derechos reservados.</p>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.tiktok.com/es/" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!--scripts-->          
+    <!-- Swiper JS teams-->
+    <script>
+        var swiper = new Swiper('.team-swiper', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true, // Habilita el bucle infinito
+            loopedSlides: 7, // Número total de slides (ajustar si tienes más)
+            loopFillGroupWithBlank: false, // Evita espacios vacíos
+            centeredSlides: true, // Centra las diapositivas para una transición fluida
+            autoplay: {
+                delay: 3000, // Cambia cada 3 segundos
+                disableOnInteraction: false, // Sigue en autoplay incluso si el usuario interactúa
+            },
+            speed: 600, // Hace la transición más suave
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 }
+            }
+        });
+    </script>
+
+    <!--scripts testimonios-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const swiperTestimonials = new Swiper('.testimonials-swiper', {
+        slidesPerView: 1, // Muestra una diapositiva a la vez
+        spaceBetween: 20, // Espacio entre diapositivas
+        loop: true, // Activa el loop infinito
+        autoplay: {
+            delay: 4000, // Cambia cada 4 segundos
+            disableOnInteraction: false, // No se detiene al interactuar
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 }, // 2 testimonios en tabletas
+            1024: { slidesPerView: 3 }, // 3 testimonios en pantallas grandes
+        }
+    });
+});
+    </script>
+    <!--scripts pqfrecuentes-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+<!--animaciones-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0 });
+    gsap.from(".hero p", { duration: 1.2, y: 50, opacity: 0, delay: 0.5 });
+    gsap.from(".btn", { duration: 1, scale: 0.8, opacity: 0, delay: 1 });
+</script>
+
+    <!--mi ubicacion-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoNT4wmYFR0WTz6PRgVDcm0NbPeG_H5Ew"></script>
+    <script>
+    function initMap() {
+        // Coordenadas de la oficina
+        const location = { lat: 43.3391389, lng: -8.4041389}; // Cambia a tus coordenadas (Madrid como ejemplo)
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 14, // Nivel de zoom inicial
+            center: location, // Centro del mapa
+        });
+
+        // Marcador en la ubicación
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Sociedad Inversiones Higoma SL - SIH",
+        });
+    }
+
+    // Inicializa el mapa al cargar la página
+    window.onload = initMap;
+</script>
+<script src="script.v1.js" defer></script>
+<script>
+    // Botón hamburguesa y navegación principal
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.navigation');
+
+// Alternar el menú en dispositivos móviles
+menuToggle.addEventListener('click', () => {
+    navigation.classList.toggle('active');
+});
+
+// Submenús
+const dropdownItems = document.querySelectorAll('.has-dropdown');
+
+// Alternar submenús en móviles
+dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        // Evitar redirección si se hace clic en el enlace principal
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            // Alternar el submenú correspondiente
+            item.classList.toggle('active');
+        }
+    });
+});
+    // Opcional para Movilidad
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".navigation");
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+
+    // Alternar navegación en dispositivos móviles
+    menuToggle.addEventListener("click", () => {
+        navigation.classList.toggle("active");
+    });
+
+    // Manejo de submenús
+    dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+
+        // Alternar submenú con teclado (Enter o Espacio)
+        link.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleMenu(dropdown);
+            }
+        });
+
+        // Alternar submenú al hacer clic
+        link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                toggleMenu(dropdown);
+            }
+        });
+    });
+
+    // Cerrar submenús al hacer clic fuera de ellos
+    document.addEventListener("click", (e) => {
+        dropdowns.forEach((dropdown) => {
+            if (!dropdown.contains(e.target)) {
+                closeMenu(dropdown);
+            }
+        });
+    });
+
+    // Función para alternar submenú
+    function toggleMenu(dropdown) {
+        const isOpen = dropdown.classList.contains("open");
+        closeAllMenus(); // Cierra otros menús
+        if (!isOpen) {
+            dropdown.classList.add("open");
+            dropdown.querySelector("a").setAttribute("aria-expanded", "true");
+        }
+    }
+
+    // Función para cerrar todos los submenús
+    function closeAllMenus() {
+        dropdowns.forEach((dropdown) => closeMenu(dropdown));
+    }
+
+    // Función para cerrar un submenú
+    function closeMenu(dropdown) {
+        dropdown.classList.remove("open");
+        dropdown.querySelector("a").setAttribute("aria-expanded", "false");
+    }
+
+});
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const videoSection = document.querySelector(".hero"); // Asegúrate de que tu sección de video tenga esta clase
+
+    function updateHeader() {
+        const videoBottom = videoSection.offsetTop + videoSection.offsetHeight;
+        if (window.scrollY > videoBottom) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", updateHeader);
+});
+</script>       
+</body>
+</html>

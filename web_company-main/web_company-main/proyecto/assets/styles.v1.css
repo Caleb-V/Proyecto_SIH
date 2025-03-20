@@ -1,0 +1,1257 @@
+/* Variables de colores */
+:root {
+    --primary-color: #00509e; /* Azul principal */
+    --secondary-color: #e8a317; /* Amarillo dorado */
+    --white: white; /* Blanco puro */
+    --text-color: #003366; /* Azul oscuro para texto */
+}
+/* ==== ESTILO GENERAL ==== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background:transparent;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    font-size: 14px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tamaños de encabezados dinámicos */
+h1 { font-size: clamp(2.5rem, 4vw, 3.1rem); }
+h2 { font-size: clamp(2.2rem, 3vw, 3rem); }
+h3 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+p  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
+
+/* ========== CONFIGURACIÓN GENERAL DE RESPONSIVIDAD ========== */
+/* General */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Para Tablets */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    p  { font-size: 1rem; }
+
+
+}
+
+
+
+/* Para Móviles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 5px;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    p  { font-size: 0.9rem; }
+    
+    section {
+        padding: 30px 15px;
+    }
+    
+    img {
+        max-width: 99%;
+        height: auto;
+    }
+}
+
+/* Para Móviles Pequeños */
+@media (max-width: 450px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+    p  { font-size: 0.85rem; }
+}
+
+/* ==== ENCABEZADO DINÁMICO ==== */
+.header {
+    background: transparent;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Cambia a fondo blanco al hacer scroll */
+.header.scrolled {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: height 0.5s ease; /* Transición suave para la altura */
+    height: 60px; /* Altura más baja cuando es sticky */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para efecto visual */
+}
+
+/* Ajusta los colores del menú cuando el fondo es blanco */
+.header.scrolled .navigation ul {
+    display: flex;
+    flex-direction:row;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 1vh;      
+}
+
+.header.header.scrolled .navigation ul li a {
+    color: #003366!important;
+}
+
+.header.scrolled .logo-title .company-title {
+    color:#003366;
+}
+
+.header.scrolled .menu-toggle {
+    color: #003366;
+}
+
+    /* ==== LOGO Y TÍTULO ==== */
+    .logo-title {
+        display: flex;
+        text-decoration: none !important; /* Elimina el subrayado del enlace */
+        align-items: center;
+        gap: 0;
+        flex-grow: 1;
+        justify-content: flex-start;
+        position: absolute;
+        top: 50%; /* Ajusta el logo más hacia el centro */
+        transform: translateY(-50%);
+        left: 5px;
+    }
+    
+    .logo {
+        max-height: 180px;
+        margin-left: 0;
+    }
+    
+    .company-title {
+        font-size: 1.0rem;
+        color: var(--secondary-color);
+        font-weight: 700;
+        left: auto;
+        white-space: nowrap;
+    }
+
+/* ==== MENÚ DE NAVEGACIÓN SIEMPRE VISIBLE ==== */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    flex-grow: 5;
+    padding: 10px 0;
+    margin-left: 450px; /* Ajusta el espacio entre el logo y el menú */
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    position: relative;
+}
+.navigation ul li a {
+    text-decoration: none !important; /* Quita el subrayado */
+}
+
+
+/* ==== ESTILOS DEL MENÚ ==== */
+.navigation ul li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color:var(--secondary-color)!important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-bottom: none !important;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.navigation ul li a:hover {
+    background-color:white;
+    color: #003a80 !important;
+}
+
+/* Estilos del botón de idioma */
+.language-switcher {
+    position: relative;
+  }
+  
+  .language-switcher button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* Mismo tamaño que los demás elementos */
+    font-weight: 600; /* Mismo grosor de fuente */
+    color: var(--secondary-color); /* Mismo color */
+    padding: 10px 15px; /* Mismo padding */
+    border-radius: 5px; /* Mismo borde redondeado */
+    transition: all 0.3s ease; /* Misma transición */
+  }
+  
+  .language-switcher button:hover {
+    background-color: white; /* Mismo efecto hover */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+  
+  /* Estilos de las opciones de idioma */
+  .language-options {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo que el submenú */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Mismo borde */
+    border-radius: 8px; /* Mismo borde redondeado */
+    padding: 10px 0; /* Mismo padding */
+    top: 100%;
+    left: 0;
+    min-width: 120px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Misma sombra */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Misma transición */
+    text-align: center;
+  }
+  
+  .language-switcher:hover .language-options {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .language-options a {
+    display: block;
+    padding: 12px 20px; /* Mismo padding que el submenú */
+    text-decoration: none;
+    color: #00509e !important; /* Mismo color */
+    font-size: 1rem; /* Mismo tamaño de fuente */
+    transition: all 0.3s ease; /* Misma transición */
+  }
+  
+  .language-options a:hover {
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo al pasar el mouse */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+
+  /* Cambia el color del botón de idioma al hacer scroll */
+.header.scrolled .language-switcher button {
+    color: #003366 !important; /* Mismo color que los demás elementos */
+  }
+  
+  .header.scrolled .language-switcher button:hover {
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+  
+  /* Cambia el fondo y el color de las opciones de idioma al hacer scroll */
+  .header.scrolled .language-options {
+    background-color: white; /* Mismo fondo que el submenú */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Mismo borde */
+  }
+  
+  .header.scrolled .language-options a {
+    color: #00509e !important; /* Mismo color que los enlaces del submenú */
+  }
+  
+  .header.scrolled .language-options a:hover {
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo al pasar el mouse */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+
+/* ==== SUBMENÚ OCULTO POR DEFECTO ==== */
+.has-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.973);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.has-dropdown.open .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}        
+
+.dropdown-menu li a {
+    font-size: 1rem;
+    color: #00509e !important;
+    padding: 12px 20px;
+    display: block;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.973);
+    color: #003a80 !important;
+}
+
+/* ======== BOTÓN MENÚ HAMBURGUESA ======== */
+.menu-toggle {
+display: none;
+font-size: 1.2rem;
+background: none;
+border: none;
+color: var(--primary-color);
+cursor: pointer;
+position: absolute;
+top: 10px;
+right: 20px; /* Cambiado de left a right */
+z-index: 1200;
+}
+
+/* ======== MENÚ DE NAVEGACIÓN ======== */
+.navigation {
+display: flex;
+justify-content: center;
+align-items: center;
+background: transparent;
+}
+
+.navigation ul {
+display: flex;
+list-style: none;
+padding: 0;
+margin: 0;
+gap: 10px;
+}
+
+.navigation ul li {
+position: relative;
+}
+
+.navigation ul li a {
+text-decoration: none;
+color: var(--secondary-color);
+font-size: 1rem;
+padding: 10px 15px;
+transition: 0.3s;
+}
+
+/* ======== SUBMENÚ ======== */
+.has-dropdown .dropdown-menu {
+display: none;
+position: absolute;
+background: transparent;
+border-radius: 5px;
+padding: 10px 0;
+top: 100%;
+left: 0;
+min-width: 100px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.has-dropdown:hover .dropdown-menu {
+display: none;
+}
+
+/* ======== RESPONSIVIDAD ======== */
+@media screen and (min-width: 250px) and (max-width: 1180px) {
+/* Estilos para el botón menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    position:fixed;
+    top: 10px;
+    right: 2vw; /* Cambiado de left a right */
+    z-index: 1200;
+    }
+
+/* Menú oculto inicialmente */
+.navigation {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    position: fixed; /* Fijado en la pantalla */
+    top: 60px; /* Ajusta el top para que no se superponga con el header */
+    right: -100%; /* Oculto fuera de la pantalla */
+    height: calc(100vh - 60px); /* Altura completa menos la altura del header */
+    width: 250px; /* Ancho del menú */
+    background: white; /* Fondo blanco */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Animación de entrada */
+    overflow-y: auto; /* Permite el scroll si el contenido es muy largo */
+}
+
+.header.scrolled .navigation ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  
+}
+
+/* Menú cuando está activo (aparece desde la derecha) */
+.navigation.active {
+    right: 0; /* Se muestra */
+    display: flex; /* Muestra el menú */
+    height: 400px;
+}
+
+/* Estilos de la lista del menú */
+.navigation ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.navigation ul li {
+    text-align:center;
+    justify-content: flex-start
+}
+
+.navigation ul li a {
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Estilos para el botón de idioma en móviles */
+.language-switcher {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center;
+}
+
+.language-switcher button {
+    width: 100%;
+    padding: 10px 0; /* Ajusta el padding para móviles */
+}
+
+.language-options {
+    position: relative; /* Cambia a posición relativa en móviles */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none; /* Elimina la sombra en móviles */
+    border: none;
+}
+
+.language-options a {
+    padding: 10px 0; /* Ajusta el padding para móviles */
+}
+
+/* Estilos para SUBMENÚ dropdown en móviles */
+.has-dropdown {
+    position: relative;
+    width: 100%; /* Para ocupar todo el ancho disponible */
+    text-align: center;
+}
+
+.has-dropdown .dropdown-menu {
+    display: none; /* Oculta el submenú por defecto */
+    position: relative;
+    background: white;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 2px; /* Separación del menú principal */
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.has-dropdown.open .dropdown-menu {
+    display: block; /* Muestra el submenú cuando está abierto */
+}
+
+.has-dropdown .dropdown-menu li {
+    display: block;
+    padding: 8px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea separadora */
+}
+
+.has-dropdown .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.has-dropdown .dropdown-menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+.has-dropdown .dropdown-menu a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+}
+@media screen and (max-width: 1180px) {
+.hero {
+height:55vh;
+padding: 20px 10px;
+}
+
+.logo {
+max-height: 50px;
+}
+
+.company-title {
+font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 740px) {
+.hero {
+height: 45vh;
+padding: 20px 10px;
+}
+
+.logo {
+max-height: 50px;
+}
+
+.company-title {
+font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 450px) {
+.hero {
+height: 35vh;
+padding: 10px 5px;
+}
+
+.logo {
+max-height:45px;
+}
+
+.company-title {
+font-size:0.9rem;
+}
+}
+
+@media screen and (max-width: 300px) {
+.hero {
+    height: 30vh;
+    padding: 10px 5px;
+}
+
+.logo {
+    max-height:20px;
+}
+
+.company-title {
+    font-size:0.9rem;
+}
+}
+
+/* 📌 Sección Hero */
+.hero {
+    position: relative;
+    width: 99%; /* 📏 Se ajusta al 100% del viewport */
+    max-width: 99vw; /* 🔄 Evita el desbordamiento lateral */
+    height: 90vh; /* 📏 Ajuste dinámico de altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background: url("images/Banner%20Linkedin.png") no-repeat center center/cover;
+    margin:0 auto; /* 🔄 Evita desplazamiento lateral */
+    padding: 0;
+}
+/* 🏆 Título */
+.hero-title {
+    font-size: clamp(1.8rem, 3vw, 3.2rem); /* 📏 Ajuste dinámico */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    max-width: 90%;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    color: white;
+    max-width: 80%;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* 📌 Capa de Fondo */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.367);
+    padding: 20px;
+}
+
+/* 📌 Contenedor del Botón */
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 🔄 Centra el botón horizontalmente */
+    position: absolute;
+    bottom: 15px; /* 🔽 Ajusta la distancia desde el borde inferior */
+}
+/* 📌 Botón */
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 12px 25px;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: bold;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+/* 🔄 Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title, .hero-subtitle, .btn-primary {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 📱 RESPONSIVIDAD */
+/* Ajustes en móviles */
+@media screen and (min-width: 250px) and (max-width: 1180px) {
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:transparent;
+    padding: 15px 15px;
+    z-index:400;
+    transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+    background:white;
+    }
+    
+    .hero {
+    margin-top: 0px; /* Para evitar que el contenido quede oculto detrás del header */
+    }
+/* Contenedor que mantiene alineado el título y subtítulo */
+.hero-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    }
+    /* Título centrado (sin desaparecer, solo efecto de entrada) */
+    .hero-title {
+    font-size: clamp(1.5rem, 3vw, 2.0rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+    width: 100%;
+    opacity: 1; /* Mantenerlo siempre visible */
+    animation: floatTitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+    }
+    
+    /* Subtítulo centrado */
+    .hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    max-width: 80%;
+    margin: 0 auto 15px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Siempre visible */
+    animation: floatSubtitle 3s infinite alternate ease-in-out; /* Movimiento sutil */
+    }
+    
+    .btn-primary {
+    font-size: 0.7rem;
+    align-items: center;
+    margin-top: 0;
+    padding: 10px 15px;
+    }}
+
+/* Sobre Nosotros - Subpágina */
+.about-page, .timeline-section, .stats-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: white !important;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.3rem;
+    color: black;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+/* 🖼️ BLOQUES CON IMÁGENES GRANDES */
+.about-story {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background: white;
+    color: var(--text-color);
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+/* 📱 Ajustes para móviles medianos (768px o menos) */
+@media screen and (max-width: 768px) {
+    .about-page, .timeline-section, .stats-section {
+        padding: 40px 10px; /* Reduce el padding para mejor uso del espacio */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Reduce el tamaño en móviles */
+    }
+
+    .intro {
+        font-size: 1.1rem; /* Hace el texto más legible */
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+
+    /* 🖼️ Ajustes en la imagen de fondo */
+    .about-story {
+        height: 40vh; /* Reduce la altura en móviles */
+        background-attachment: scroll; /* Evita problemas con el efecto fixed */
+    }
+
+    .overlay {
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+    }
+}
+
+/* 📱 Ajustes para móviles pequeños (450px o menos) */
+@media screen and (max-width: 450px) {
+    .about-page, .timeline-section, .stats-section {
+        padding: 30px 5px; /* Asegura buen espaciado sin desperdiciar espacio */
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+        max-width: 95%;
+        margin-bottom: 25px;
+    }
+
+    /* 🖼️ Ajuste de altura y alineación */
+    .about-story {
+        height: 35vh; /* Reduce más en móviles pequeños */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .overlay {
+        padding: 20px;
+        width: 95%;
+        max-width: 450px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 📅 NUEVO DISEÑO PARA LÍNEA DE TIEMPO */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🏗️ Línea central de la timeline */
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* 📌 Cada evento de la línea de tiempo */
+.timeline-item {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 💡 Alternar los eventos a los lados */
+.timeline-item:nth-child(odd) {
+    left: -48%;
+}
+
+.timeline-item:nth-child(even) {
+    left: 48%;
+}
+
+/* 📍 Puntos en la línea */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: 20px;
+    left: calc(100% + 12px);
+    z-index: 3;
+}
+
+/* 🔵 Alternar la posición de los puntos */
+.timeline-item:nth-child(even)::before {
+    left: -32px;
+}
+
+/* 🏆 Año */
+.year {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* 📜 Descripción */
+.timeline-item p {
+    font-size: 1.1rem;
+    color: black;
+    line-height: 1.6;
+}
+
+/* 🏗️ EFECTOS DE HOVER */
+.timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Ajustes para móviles medianos (768px o menos) */
+@media screen and (min-width: 250px) and (max-width: 1100px) {
+    /* 🔹 Línea de tiempo */
+    .timeline {
+        padding: 20px;
+        max-width: 100%; /* Asegura que se ajuste bien */
+    }
+
+    .timeline::before {
+        left: 15px; /* Mueve la línea de tiempo a la izquierda */
+    }
+
+    .timeline-item {
+        width: 90%;
+        left: 0 !important;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+    .timeline-item::before {
+        left: 20px; /* Ajusta el punto */
+    }
+
+    /* 🔹 Estadísticas */
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduce el tamaño en móviles */
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem; /* Reduce tamaño del número */
+    }
+
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 📱 Ajustes para móviles pequeños (450px o menos) */
+@media (max-width: 450px) {
+    /* 🔹 Línea de tiempo */
+    .timeline {
+        padding: 15px;
+    }
+
+    .timeline::before {
+        left: 10px; /* Ajusta más la línea */
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 15px;
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .year {
+        font-size: 1.2rem; /* Reduce el tamaño de los años */
+    }
+
+    .timeline-item p {
+        font-size: 1rem;
+    }
+
+    /* 🔹 Estadísticas */
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 15px;
+    }
+
+    .stat-item {
+        padding: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem; /* Reduce tamaño en móviles */
+    }
+
+    .stat-item p {
+        font-size: 0.85rem;
+    }
+}
+
+/* 📱 Ajustes para móviles ultra pequeños (350px o menos) */
+@media (max-width: 350px) {
+    /* 🔹 Línea de tiempo */
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: 12px;
+    }
+
+    .year {
+        font-size: 1.1rem;
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem;
+    }
+
+    /* 🔹 Estadísticas */
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+}
+
+/* 📊 ESTADÍSTICAS MEJORADAS */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* 📊 Cada estadística */
+.stat-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 💡 Efecto hover */
+.stat-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 📊 Número */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* 📌 Descripción */
+.stat-item p {
+    font-size: 1rem;
+    color: black;
+    line-height: 1.4;
+}
+
+
+/* Encuéntranos */
+/* Ajuste del fondo blanco en Encuéntranos */
+.location {
+    background-color: white !important; /* Fondo completamente blanco */
+    color: black; /* Color del texto para mayor contraste */
+    padding: 80px 20px; /* Espaciado para que no se vea vacío */
+    text-align: center;
+}
+
+.location h2 {
+    font-size: 2.1rem;
+    color: #003366; /* Azul oscuro para destacar */
+    margin-bottom: 20px;
+}
+
+.location p {
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 40px;
+}
+
+/* Ajuste del mapa para que no tenga sombras ni bordes */
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px; /* Opcional, si quieres bordes redondeados */
+    box-shadow: none; /* Elimina cualquier sombra previa */
+}
+
+/* Footer */
+.footer {
+    background: var(--text-color); /* Color corporativo */
+    color: var(--secondary-color) !important; /* Asegura que el texto sea visible */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+.footer ul {
+    /* Quitar los estilos de lista predeterminados (puntos o números) */
+    list-style: none;
+    /* Mostrar los elementos de la lista en una fila horizontal */
+    display: flex;
+    /* Centrar los elementos de la lista horizontalmente */
+    justify-content: center;
+    /* Espaciado entre elementos de la lista */
+    gap: 15px;
+    /* Quitar el espaciado interno de la lista */
+    padding: 0;
+}
+
+.footer ul li a {
+    /* Color blanco para los enlaces */
+    color: white;
+    /* Quitar el subrayado predeterminado de los enlaces */
+    text-decoration: none;
+    /* Tamaño de fuente para los enlaces */
+    font-size: 1rem;
+    /* Transición suave para cambios de color al pasar el mouse */
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    /* Color dorado para los enlaces al pasar el mouse */
+    color: white;
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2.1rem;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+/* Corrección del hover para que use un color fijo */
+.social-links a:hover {
+    color:var(--secondary-color); /* Dorado para resaltar */
+    transform: scale(2.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .social-links {
+        gap: 5px;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+}
+/* Botón flotante de WhatsApp */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.whatsapp-floating:hover {
+    transform: scale(1.1);
+    background-color: #20c357;
+}
+
+.whatsapp-floating:hover::after {
+    content: "¡Chatea con nosotros!";
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Animación de sacudida */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+.shake {
+    animation: shake 1s infinite;
+    animation-delay: 2s; /* Espera antes de animar */
+}

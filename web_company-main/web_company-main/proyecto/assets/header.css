@@ -1,0 +1,484 @@
+/* ==== ENCABEZADO DINÁMICO ==== */
+.header {
+    background: transparent;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Cambia a fondo blanco al hacer scroll */
+.header.scrolled {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: height 0.5s ease; /* Transición suave para la altura */
+    height: 60px; /* Altura más baja cuando es sticky */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para efecto visual */
+}
+
+/* Ajusta los colores del menú cuando el fondo es blanco */
+.header.scrolled .navigation ul {
+    display: flex;
+    flex-direction:row;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 1vh;      
+}
+
+.header.header.scrolled .navigation ul li a {
+    color: #003366!important;
+}
+
+.header.scrolled .logo-title .company-title {
+    color:#003366;
+}
+
+.header.scrolled .menu-toggle {
+    color: #003366;
+    display: flex;
+    flex-direction:row;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 50px; 
+}
+
+    /* ==== LOGO Y TÍTULO ==== */
+    .logo-title {
+        display: flex;
+        text-decoration: none !important; /* Elimina el subrayado del enlace */
+        align-items: center;
+        gap: 0;
+        flex-grow: 1;
+        justify-content: flex-start;
+        position: absolute;
+        top: 50%; /* Ajusta el logo más hacia el centro */
+        transform: translateY(-50%);
+        left: 5px;
+    }
+    
+    .logo {
+        max-height: 180px;
+        margin-left: 0;
+    }
+    
+    .company-title {
+        font-size: 1.0rem;
+        color: var(--secondary-color);
+        font-weight: 700;
+        left: auto;
+        white-space: nowrap;
+    }
+
+/* ==== MENÚ DE NAVEGACIÓN SIEMPRE VISIBLE ==== */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    flex-grow: 5;
+    padding: 10px 0;
+    margin-left: 450px; /* Ajusta el espacio entre el logo y el menú */
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    position: relative;
+}
+.navigation ul li a {
+    text-decoration: none !important; /* Quita el subrayado */
+}
+
+
+/* ==== ESTILOS DEL MENÚ ==== */
+.navigation ul li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color:var(--secondary-color)!important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-bottom: none !important;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.navigation ul li a:hover {
+    background-color:white;
+    color: #003a80 !important;
+}
+
+/* Estilos del botón de idioma */
+.language-switcher {
+    position: relative;
+  }
+  
+  .language-switcher button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* Mismo tamaño que los demás elementos */
+    font-weight: 600; /* Mismo grosor de fuente */
+    color: var(--secondary-color); /* Mismo color */
+    padding: 10px 15px; /* Mismo padding */
+    border-radius: 5px; /* Mismo borde redondeado */
+    transition: all 0.3s ease; /* Misma transición */
+  }
+  
+  .language-switcher button:hover {
+    background-color: white; /* Mismo efecto hover */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+  
+  /* Estilos de las opciones de idioma */
+  .language-options {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo que el submenú */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Mismo borde */
+    border-radius: 8px; /* Mismo borde redondeado */
+    padding: 10px 0; /* Mismo padding */
+    top: 100%;
+    left: 0;
+    min-width: 120px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Misma sombra */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Misma transición */
+    text-align: center;
+  }
+  
+  .language-switcher:hover .language-options {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .language-options a {
+    display: block;
+    padding: 12px 20px; /* Mismo padding que el submenú */
+    text-decoration: none;
+    color: #00509e !important; /* Mismo color */
+    font-size: 1rem; /* Mismo tamaño de fuente */
+    transition: all 0.3s ease; /* Misma transición */
+  }
+  
+  .language-options a:hover {
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo al pasar el mouse */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+
+  /* Cambia el color del botón de idioma al hacer scroll */
+.header.scrolled .language-switcher button {
+    color: #003366 !important; /* Mismo color que los demás elementos */
+  }
+  
+  .header.scrolled .language-switcher button:hover {
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+  
+  /* Cambia el fondo y el color de las opciones de idioma al hacer scroll */
+  .header.scrolled .language-options {
+    background-color: white; /* Mismo fondo que el submenú */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Mismo borde */
+  }
+  
+  .header.scrolled .language-options a {
+    color: #00509e !important; /* Mismo color que los enlaces del submenú */
+  }
+  
+  .header.scrolled .language-options a:hover {
+    background-color: rgba(255, 255, 255, 0.973); /* Mismo fondo al pasar el mouse */
+    color: #003a80 !important; /* Mismo color al pasar el mouse */
+  }
+
+/* ==== SUBMENÚ OCULTO POR DEFECTO ==== */
+.has-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.973);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.has-dropdown.open .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}        
+
+.dropdown-menu li a {
+    font-size: 1rem;
+    color: #00509e !important;
+    padding: 12px 20px;
+    display: block;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.973);
+    color: #003a80 !important;
+}
+
+/* ======== BOTÓN MENÚ HAMBURGUESA ======== */
+.menu-toggle {
+display: none;
+font-size: 1.2rem;
+background: none;
+border: none;
+color: var(--primary-color);
+cursor: pointer;
+position:fixed;
+top: 10px;
+right: 2vw; /* Cambiado de left a right */
+z-index: 1200;
+}
+
+/* ======== MENÚ DE NAVEGACIÓN ======== */
+.navigation {
+display: flex;
+justify-content: center;
+align-items: center;
+background: transparent;
+}
+
+.navigation ul {
+display: flex;
+list-style: none;
+padding: 0;
+margin: 0;
+gap: 10px;
+}
+
+.navigation ul li {
+position: relative;
+}
+
+.navigation ul li a {
+text-decoration: none;
+color: var(--secondary-color);
+font-size: 1rem;
+padding: 10px 15px;
+transition: 0.3s;
+}
+
+/* ======== SUBMENÚ ======== */
+.has-dropdown .dropdown-menu {
+display: none;
+position: absolute;
+background: transparent;
+border-radius: 5px;
+padding: 10px 0;
+top: 100%;
+left: 0;
+min-width: 100px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.has-dropdown:hover .dropdown-menu {
+display: none;
+}
+
+@media screen and (max-width: 1180px) {
+.hero {
+height:40vh;
+padding: 20px 10px;
+}
+
+/* Menú oculto inicialmente */
+.navigation {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    position: fixed; /* Fijado en la pantalla */
+    top: 60px; /* Ajusta el top para que no se superponga con el header */
+    right: -100%; /* Oculto fuera de la pantalla */
+    height: calc(100vh - 60px); /* Altura completa menos la altura del header */
+    width: 170px; /* Ancho del menú */
+    background: white; /* Fondo blanco */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Animación de entrada */
+    overflow-y: auto; /* Permite el scroll si el contenido es muy largo */
+}
+
+.header.scrolled .navigation ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Menú cuando está activo (aparece desde la derecha) */
+.navigation.active {
+    right: 0; /* Se muestra */
+    display: flex; /* Muestra el menú */
+    height: 400px;
+}
+
+/* Estilos de la lista del menú */
+.navigation ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.navigation ul li {
+    text-align:center;
+    justify-content: flex-start
+}
+
+.navigation ul li a {
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Estilos para el botón de idioma en móviles */
+.language-switcher {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center;
+}
+
+.language-switcher button {
+    width: 100%;
+    padding: 10px 0; /* Ajusta el padding para móviles */
+}
+
+.language-options {
+    position: relative; /* Cambia a posición relativa en móviles */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none; /* Elimina la sombra en móviles */
+    border: none;
+}
+
+.language-options a {
+    padding: 10px 0; /* Ajusta el padding para móviles */
+}
+
+/* Estilos para SUBMENÚ dropdown en móviles */
+.has-dropdown {
+    position: relative;
+    width: 100%; /* Para ocupar todo el ancho disponible */
+    text-align: center;
+}
+
+.has-dropdown .dropdown-menu {
+    display: none; /* Oculta el submenú por defecto */
+    position: relative;
+    background: white;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 2px; /* Separación del menú principal */
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.has-dropdown.open .dropdown-menu {
+    display: block; /* Muestra el submenú cuando está abierto */
+}
+
+.has-dropdown .dropdown-menu li {
+    display: block;
+    padding: 8px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea separadora */
+}
+
+.has-dropdown .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.has-dropdown .dropdown-menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+.has-dropdown .dropdown-menu a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+max-height: 50px;
+}
+
+.company-title {
+font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 740px) {
+.hero {
+height: 40vh;
+padding: 20px 10px;
+}
+
+.logo {
+max-height: 50px;
+}
+
+.company-title {
+font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 450px) {
+.hero {
+height: 25vh;
+padding: 10px 5px;
+}
+
+.logo {
+max-height:45px;
+}
+
+.company-title {
+font-size:0.9rem;
+}
+}
+
+@media screen and (max-width: 300px) {
+.hero {
+    height: 5vh;
+    padding: 10px 5px;
+}
+
+.logo {
+    max-height:20px;
+}
+
+.company-title {
+    font-size:0.9rem;
+}
+}
