@@ -117,13 +117,60 @@
 
 /* 📱 Móviles pequeños (hasta 768px) */
 @media screen and (max-width:768px) {
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .card {
-        max-width: 90%;
-        padding: 10px;
-    }
+        /* 1. Asegurar que el contenedor del Swiper ocupe todo el ancho */
+        .team-swiper {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: block; /* Evita grid o display: flex que pueda encoger */
+          padding: 0;     /* Ajusta si quieres un poco de espacio */
+          margin: 0 auto;
+        }
+      
+        /* 2. Asegurar que el wrapper y cada slide también se expandan */
+        .swiper-wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: flex; 
+          flex-wrap: nowrap; /* O wrap si quieres que se partan en varias líneas */
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .swiper-slide {
+          width: 100% !important; 
+          max-width: 100% !important;
+          display: flex;
+          justify-content: center;
+          margin: 0; 
+        }
+      
+        /* 3. Hacer la tarjeta más ancha y centrada */
+        .card {
+          width: 90% !important;    /* Para que ocupe el 90% del ancho del slide */
+          max-width: none !important;
+          margin: 0 auto;
+          padding: 10px;
+        }
+      
+        /* 4. Centrar la imagen dentro de .card-photo */
+        .card-photo {
+          display: flex;
+          justify-content: center;  /* Centra horizontalmente */
+          align-items: center;      /* Centra verticalmente si fijas altura */
+          width: auto;             /* Quita clamps aquí si no quieres recortar */
+          height: auto;
+          overflow: hidden;        /* Solo si quieres recortar sobrantes */
+          border-radius: 10px;
+          margin: 0 auto;          /* Centra el contenedor de la imagen */
+        }
+      
+        /* 5. Ajustar la imagen sin deformarla */
+        .card-photo img {
+          display: block;
+          width: clamp(70px, 40vw, 130px);  /* Ajusta a tu gusto */
+          height: auto;                    /* Evita forzar altura */
+          object-fit: cover;               /* Recorta sin deformar */
+          margin: 0 auto;
+        }
+      
 }
