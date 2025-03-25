@@ -20,6 +20,7 @@
     max-width: 1000px; /* Ajuste del ancho para una mejor distribución */
     margin: auto;
     overflow: hidden;
+    direction: rtl;
 }
 
 .swiper-wrapper {
@@ -72,6 +73,7 @@ blockquote {
 @media (max-width: 768px) {
     .testimonials-swiper {
         max-width: 100%;
+        overflow: hidden;
     }
     .swiper-slide {
         height: 240px;
