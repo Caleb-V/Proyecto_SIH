@@ -1,4 +1,9 @@
 /* Sección Sobre Nosotros */
+
+.hero{
+    margin: 0;
+}
+
 .about-page {
     background: white;
     padding: 100px 20px;
@@ -7,28 +12,29 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 50vh; /* Asegura que ocupe la altura completa de la pantalla */
+    min-height: 50vh;
 }
 
 /* Contenedor */
 .about-page .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 15px; /* Evita que el contenido se pegue a los bordes en móviles */
 }
 
-/* Título principal grande y llamativo */
+/* Título principal */
 .about-title {
-    font-size: 3.1rem; /* Aumenta el tamaño del título */
+    font-size: clamp(2rem, 4vw, 3.1rem); /* Ajuste dinámico */
     font-weight: bold;
-    color:#003366!important; /* Color llamativo */
+    color: #003366 !important;
     margin-bottom: 30px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* Descripción */
 .about-description {
-    font-size: 1.3rem;
-    color: #003366!important; /* Azul oscuro */
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #003366 !important;
     max-width: 900px;
     margin: 0 auto 40px auto;
     line-height: 1.8;
@@ -37,10 +43,10 @@
 /* Botón Saber Más */
 .btn {
     display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: white;
-    background: linear-gradient(135deg, #00509e, #e8a317); /* Azul y dorado */
+    background: linear-gradient(135deg, #00509e, #e8a317);
     text-decoration: none;
     border-radius: 50px;
     transition: background 0.3s, transform 0.2s;
@@ -53,33 +59,38 @@
     transform: scale(1.1);
 }
 
-/* RESPONSIVIDAD */
-/* Ajustes para tablets */
-@media (max-width: 1024px) {
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .about-page {
+        padding: 70px 15px; /* Reduce el padding en móviles */
+    }
+
     .about-title {
-        font-size: 3rem; /* Reduce un poco en tablets */
+        font-size: 2rem; /* Reduce el tamaño del título en pantallas pequeñas */
     }
 
     .about-description {
-        font-size: 1.2rem;
-        padding: 0 20px;
-    }
-}
-
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-    .about-title {
-        font-size: 2.5rem;
-    }
-
-    .about-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        padding: 0 15px;
+        font-size: 1.1rem; /* Ajuste en móviles */
+        max-width: 100%;
     }
 
     .btn {
+        padding: 10px 20px;
         font-size: 1rem;
-        padding: 12px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
     }
 }

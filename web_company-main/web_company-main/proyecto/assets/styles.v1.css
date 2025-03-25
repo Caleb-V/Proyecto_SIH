@@ -15,6 +15,11 @@ body {
     line-height: 1.6;
     font-size: 14px;
 }
+
+*{
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -111,7 +116,11 @@ p  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
     flex-direction:row;
     justify-content: center; /* Centra horizontalmente */
     align-items: center;     /* Centra verticalmente */
-    height: 1vh;      
+    height: 1vh;   
+}
+
+.header.scrolled .has-dropdown ul {
+    height: 120px;
 }
 
 .header.header.scrolled .navigation ul li a {
@@ -124,6 +133,11 @@ p  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
 
 .header.scrolled .menu-toggle {
     color: #003366;
+    display: flex;
+    flex-direction:row;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 50px; 
 }
 
     /* ==== LOGO Y TÍTULO ==== */
@@ -293,7 +307,7 @@ p  { font-size: clamp(1rem, 1.8vw, 1.2rem); }
     top: 100%;
     left: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    opacity: 0;
+    opacity:0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -331,9 +345,9 @@ background: none;
 border: none;
 color: var(--primary-color);
 cursor: pointer;
-position: absolute;
+position:fixed;
 top: 10px;
-right: 20px; /* Cambiado de left a right */
+right: 2vw; /* Cambiado de left a right */
 z-index: 1200;
 }
 
@@ -369,33 +383,25 @@ transition: 0.3s;
 .has-dropdown .dropdown-menu {
 display: none;
 position: absolute;
-background: transparent;
+background: white;
 border-radius: 5px;
 padding: 10px 0;
 top: 100%;
 left: 0;
 min-width: 100px;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.has-dropdown:hover .dropdown-menu {
-display: none;
+align-items: center;
 }
 
-/* ======== RESPONSIVIDAD ======== */
-@media screen and (min-width: 250px) and (max-width: 1180px) {
-/* Estilos para el botón menú hamburguesa */
-.menu-toggle {
-    display: none;
-    font-size: 1.2rem;
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    cursor: pointer;
-    position:fixed;
-    top: 10px;
-    right: 2vw; /* Cambiado de left a right */
-    z-index: 1200;
-    }
+.has-dropdown:hover .dropdown-menu {
+display: flex;
+}
+
+@media screen and (max-width: 1180px) {
+.hero {
+height:40vh;
+padding: 20px 10px;
+}
 
 /* Menú oculto inicialmente */
 .navigation {
@@ -405,7 +411,7 @@ display: none;
     top: 60px; /* Ajusta el top para que no se superponga con el header */
     right: -100%; /* Oculto fuera de la pantalla */
     height: calc(100vh - 60px); /* Altura completa menos la altura del header */
-    width: 250px; /* Ancho del menú */
+    width: 170px; /* Ancho del menú */
     background: white; /* Fondo blanco */
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -419,7 +425,6 @@ display: none;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-  
 }
 
 /* Menú cuando está activo (aparece desde la derecha) */
@@ -518,13 +523,6 @@ display: none;
     background: rgba(0, 0, 0, 0.05);
 }
 
-}
-@media screen and (max-width: 1180px) {
-.hero {
-height:55vh;
-padding: 20px 10px;
-}
-
 .logo {
 max-height: 50px;
 }
@@ -536,7 +534,7 @@ font-size: 1rem;
 
 @media screen and (max-width: 740px) {
 .hero {
-height: 45vh;
+height: 40vh;
 padding: 20px 10px;
 }
 
@@ -551,7 +549,7 @@ font-size: 1rem;
 
 @media screen and (max-width: 450px) {
 .hero {
-height: 35vh;
+height: 25vh;
 padding: 10px 5px;
 }
 
@@ -566,7 +564,7 @@ font-size:0.9rem;
 
 @media screen and (max-width: 300px) {
 .hero {
-    height: 30vh;
+    height: 5vh;
     padding: 10px 5px;
 }
 
@@ -578,6 +576,7 @@ font-size:0.9rem;
     font-size:0.9rem;
 }
 }
+
 
 /* 📌 Sección Hero */
 .hero {
