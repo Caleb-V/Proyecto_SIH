@@ -392,7 +392,6 @@ min-width: 100px;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 align-items: center;
 }
-
 .has-dropdown:hover .dropdown-menu {
 display: flex;
 }
@@ -414,10 +413,10 @@ padding: 20px 10px;
     width: 170px; /* Ancho del menú */
     background: white; /* Fondo blanco */
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     z-index: 1000;
     transition: right 0.3s ease-in-out; /* Animación de entrada */
     overflow-y: auto; /* Permite el scroll si el contenido es muy largo */
+    justify-content: flex-start;
 }
 
 .header.scrolled .navigation ul {
@@ -425,6 +424,26 @@ padding: 20px 10px;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    height: auto !important;
+}
+
+.header.scrolled .navigation.active{
+    right: 0; /* Se muestra */
+    display: flex; /* Muestra el menú */
+    height: 400px;
+   /* position: absolute; */
+}
+.header.scrolled .has-dropdown .dropdown-menu {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}
+
+.header.scrolled .has-dropdown ul {
+    height: auto !important;
 }
 
 /* Menú cuando está activo (aparece desde la derecha) */
@@ -485,7 +504,7 @@ padding: 20px 10px;
 
 .has-dropdown .dropdown-menu {
     display: none; /* Oculta el submenú por defecto */
-    position: relative;
+    position: static;
     background: white;
     border-radius: 5px;
     padding: 10px 0;
@@ -500,7 +519,6 @@ padding: 20px 10px;
 
 .has-dropdown .dropdown-menu li {
     display: block;
-    padding: 8px 15px;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea separadora */
 }
